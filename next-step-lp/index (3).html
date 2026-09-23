@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>転職迷子診断｜次の一歩相談室</title>
+<meta name="description" content="10問でわかる転職迷子診断。今の状態・悩み・強みを6タイプで整理して、次の一歩を考えます。">
+<style>
+:root{
+  --ink:#143b56;--deep:#0f3550;--muted:#6c818d;--blue:#2f9bd6;--light:#edf8fd;
+  --line:#dcecf3;--yellow:#ffd84d;--coral:#ff6969;--green:#12b878;
+  --shadow:0 18px 50px rgba(18,76,101,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:#fff}
+button,input{font:inherit}a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{width:min(1080px,92vw);margin:0 auto}
+
+/* =========================
+   FV: one HTML + two device images
+   picture swaps automatically by viewport width.
+========================= */
+.hero{position:relative;overflow:hidden;background:#e8f7ff}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media picture,.hero-media img{width:100%;height:100%;display:block}
+.hero-media img{object-fit:cover;object-position:center}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.72) 30%,rgba(255,255,255,.12) 62%,rgba(9,43,63,.08) 100%)}
+.hero-inner{position:relative;z-index:2;min-height:clamp(540px,56.25vw,760px);display:flex;align-items:center;padding:82px 0 60px}
+.hero-copy{width:min(630px,100%)}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:900;color:#126f96;margin-bottom:12px}
+.hero-kicker::before{content:"";width:36px;height:3px;border-radius:999px;background:var(--yellow)}
+.hero h1{margin:0 0 16px;font-size:clamp(52px,7.4vw,98px);line-height:.96;letter-spacing:-.055em;font-weight:1000;color:#173f5a}
+.hero h1 .marker{background:linear-gradient(transparent 72%,#ffea63 0);padding:0 .04em}
+.hero-lead{margin:0 0 12px;font-size:clamp(18px,2.2vw,27px);line-height:1.5;font-weight:900;color:#173f55}
+.hero-meta{margin:0 0 24px;color:#53717e;font-size:13px;font-weight:850}
+.hero .cta{min-width:300px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:13px;border:0;cursor:pointer;background:var(--coral);color:#fff;font-weight:1000;border-radius:999px;padding:16px 26px;font-size:18px;box-shadow:0 14px 28px rgba(255,105,105,.28);transition:.2s transform,.2s box-shadow}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(255,105,105,.34)}
+.cta-arrow{font-size:22px}
+
+.trust{padding:28px 0;background:#fff;border-bottom:1px solid #edf4f7}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.trust-item{text-align:center;padding:8px 24px;border-right:1px solid var(--line)}
+.trust-item:last-child{border-right:0}
+.trust-item strong{display:block;font-size:18px;line-height:1.35}
+.trust-item span{display:block;margin-top:5px;color:var(--muted);font-size:12px;font-weight:800}
+.trust-note{text-align:center;margin:22px 0 0;font-size:18px;font-weight:950;line-height:1.6}
+.trust-note em{font-style:normal;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:6px;text-underline-offset:3px}
+
+.concerns{padding:72px 0 48px;text-align:center;background:#fff}
+.eyebrow{font-size:12px;letter-spacing:.12em;font-weight:1000;color:#178eb9}
+.section-title{font-size:clamp(30px,4vw,46px);line-height:1.25;margin:10px 0 18px;font-weight:1000;letter-spacing:-.03em}
+.section-lead{margin:0 auto;max-width:760px;color:var(--muted);line-height:1.8;font-weight:750}
+.concern-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.concern-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid #e3eff4;background:linear-gradient(180deg,#f5fbfe 0%,#eef7fb 100%);box-shadow:0 12px 26px rgba(26,85,111,.05);min-height:290px;padding-top:68px}
+.concern-card img{width:100%;height:225px;object-fit:cover;object-position:top center;display:block}
+.concern-bubble{position:absolute;top:13px;left:12px;right:12px;padding:11px 10px;border-radius:17px;background:#fff;border:1px solid #e0edf2;box-shadow:0 10px 18px rgba(28,75,98,.07);font-size:13px;line-height:1.4;font-weight:1000}
+
+.value{padding:65px 0;background:#f7fcff;text-align:center}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px}
+.value-item{padding:12px 26px;border-right:1px solid var(--line)}
+.value-item:last-child{border-right:0}
+.value-icon{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;background:#e8f6ff;color:#137cb2;font-size:24px;font-weight:1000}
+.value-item h3{margin:0 0 7px;font-size:20px}
+.value-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.65;font-weight:750}
+
+.types{padding:72px 0 78px;background:#eff9fe}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.type-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(26,85,111,.06)}
+.type-img{aspect-ratio:1.5/1;overflow:hidden;background:#edf8ff}
+.type-img img{width:100%;height:100%;object-fit:cover;display:block}
+.type-body{padding:15px 16px 17px}
+.type-tag{font-size:18px;font-weight:1000;line-height:1.3}
+.type-card p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.6;font-weight:750}
+.type-card:nth-child(1) .type-tag{color:#d65d86}.type-card:nth-child(2) .type-tag{color:#2d8fd3}.type-card:nth-child(3) .type-tag{color:#2eab78}.type-card:nth-child(4) .type-tag{color:#dc971f}.type-card:nth-child(5) .type-tag{color:#7560d3}.type-card:nth-child(6) .type-tag{color:#19a4a7}
+
+.steps{padding:60px 0;background:#fff}
+.step-box{background:linear-gradient(180deg,#eff9ff 0%,#f9fdff 100%);border:1px solid #d9edf6;border-radius:26px;padding:28px}
+.step-title{text-align:center;font-size:26px;font-weight:1000;margin-bottom:22px}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:#fff;border-radius:18px;padding:20px;text-align:center;border:1px solid #e4eef2}
+.step-num{font-size:11px;color:#158db6;font-weight:1000;letter-spacing:.12em}
+.step h3{margin:8px 0 4px;font-size:18px}.step p{margin:0;color:var(--muted);font-size:12px;line-height:1.55;font-weight:750}
+
+.final{padding:76px 0;background:linear-gradient(180deg,#f5fbfd 0%,#e8f6fd 100%);text-align:center}
+.final h2{font-size:clamp(32px,5vw,54px);margin:8px 0 12px;font-weight:1000}.final p{margin:0 auto 24px;color:var(--muted);line-height:1.8;font-weight:750}.final .cta{min-width:min(410px,92vw)}
+.footer{padding:30px 0 42px;text-align:center;color:#82929a;font-size:11px}
+
+/* Quiz */
+.modal{position:fixed;inset:0;background:rgba(4,29,42,.62);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.is-open{display:flex}
+.quiz{width:min(800px,96vw);max-height:94vh;overflow:auto;background:#fff;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.30)}
+.quiz-top{padding:20px 24px 0;position:sticky;top:0;background:#fff;z-index:2}.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.quiz-head strong{font-size:14px}.close{width:38px;height:38px;border:0;border-radius:50%;background:#eef5f8;cursor:pointer;font-size:18px}
+.progress{height:8px;background:#edf4f7;border-radius:999px;overflow:hidden;margin:13px 0 10px}.progress>span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#47aee3,#19b889);transition:.25s width}
+.quiz-body{padding:10px 24px 24px}.question-title{font-size:clamp(22px,3vw,30px);line-height:1.45;margin:15px 0 9px}.question-sub{margin:0 0 20px;color:var(--muted);font-size:13px;font-weight:750}.answers{display:grid;gap:11px}.answer{border:1.5px solid #dce9ef;background:#fff;border-radius:17px;padding:15px 17px;text-align:left;cursor:pointer;transition:.2s}.answer:hover{border-color:#67b5dc;transform:translateY(-1px)}.answer strong{display:block;font-size:15px}.answer span{display:block;color:var(--muted);font-size:12px;margin-top:3px;font-weight:700}
+.quiz-bottom{padding:0 24px 24px;display:flex;justify-content:space-between;gap:12px}.secondary-btn,.primary-btn{border:0;border-radius:14px;padding:13px 16px;font-weight:1000;cursor:pointer}.secondary-btn{background:#eef5f8;color:var(--ink)}.primary-btn{background:#0e8c9f;color:#fff;min-width:150px}.primary-btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* Result */
+.result{padding:12px 24px 30px;display:none}.result.is-visible{display:block}.result-character{width:100%;aspect-ratio:16/8;overflow:hidden;border-radius:20px;background:#edf8ff;margin-bottom:20px}.result-character img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.result-badge{display:inline-flex;padding:7px 11px;border-radius:999px;background:#e8f7ff;color:#13789d;font-weight:1000;font-size:12px}.result h2{font-size:clamp(32px,5vw,46px);line-height:1.15;margin:11px 0 10px}.result-lead{margin:0 0 18px;color:var(--muted);line-height:1.75;font-weight:750;font-size:14px}
+.result-sections{display:grid;gap:12px}.result-box{background:#f7fcff;border:1px solid #d9edf5;border-radius:18px;padding:17px}.result-box h4{margin:0 0 8px;font-size:14px;color:#16435b}.result-box p{margin:0;color:#5f7782;line-height:1.72;font-weight:700;font-size:13px}.result-box ul{margin:0;padding-left:18px;color:#5f7782;line-height:1.75;font-weight:700;font-size:13px}.result-box li+li{margin-top:4px}
+.result-strength{background:linear-gradient(180deg,#fffef2 0%,#fff 100%);border-color:#f4e9a8}.result-next{background:linear-gradient(180deg,#effaff 0%,#fff 100%)}
+.result-actions{display:grid;gap:9px;margin-top:18px}.line-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:#fff;border-radius:15px;padding:15px;font-weight:1000}.retry-btn{border:0;background:#eef5f8;color:var(--ink);border-radius:15px;padding:13px;font-weight:1000;cursor:pointer}.result-note{margin:12px 0 0;color:#8a9aa1;font-size:11px;line-height:1.6;text-align:center}
+
+@media (max-width:900px){
+  .concern-grid{grid-template-columns:repeat(2,1fr)}.type-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{min-height:620px}.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.30) 40%,rgba(255,255,255,.86) 73%,rgba(255,255,255,.97) 100%)}.hero-copy{background:rgba(255,255,255,.78);backdrop-filter:blur(10px);padding:20px;border-radius:24px}.hero h1{font-size:clamp(52px,10vw,82px)}
+}
+@media (max-width:640px){
+  .hero{min-height:760px}.hero-inner{min-height:760px;align-items:flex-end;padding:92px 0 30px}.hero-media img{object-position:center top}.hero h1{font-size:clamp(48px,16vw,78px);line-height:.98}.hero-lead{font-size:18px}.hero-meta{font-size:11px}.hero .cta{width:100%;min-width:0}.trust{padding:14px 0}.trust-grid{grid-template-columns:1fr}.trust-item{padding:13px 8px;border-right:0;border-bottom:1px solid var(--line)}.trust-item:last-child{border-bottom:0}.trust-note{font-size:16px;margin-top:18px}.concerns{padding:52px 0 34px}.concern-grid{grid-template-columns:1fr 1fr;gap:12px}.concern-card{min-height:220px;padding-top:64px}.concern-card img{height:175px}.concern-bubble{font-size:11px}.value{padding:54px 0}.value-grid{grid-template-columns:1fr}.value-item{border-right:0;border-bottom:1px solid var(--line);padding:18px 10px}.value-item:last-child{border-bottom:0}.types{padding:54px 0 62px}.type-grid{grid-template-columns:1fr 1fr;gap:12px}.type-tag{font-size:15px}.type-body{padding:12px}.type-card p{font-size:11px}.steps{padding:46px 0}.step-box{padding:20px}.step-grid{grid-template-columns:1fr}.step{text-align:left}.final{padding:60px 0}.quiz{border-radius:22px}.quiz-top{padding:17px 17px 0}.quiz-body{padding:8px 17px 18px}.quiz-bottom{padding:0 17px 18px}.question-title{font-size:21px}.answer{padding:14px}.result{padding:10px 17px 24px}.result-character{aspect-ratio:4/3}.result-box{padding:15px}.line-btn{font-size:14px}
+}
+
+/* On phones: switch to the dedicated 2:3 mobile image. */
+@media (max-width:640px){.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.14) 36%,rgba(255,255,255,.84) 66%,rgba(255,255,255,.97) 100%)}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width: 640px)" srcset="assets/hero-sp.jpg">
+      <img src="assets/hero-pc.jpg" alt="街を見つめる若者のイメージ">
+    </picture>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">次の一歩、きっと見つかる。</div>
+      <h1><span class="marker">転職迷子</span>診断</h1>
+      <p class="hero-lead">転職したほうがいい？<br>それとも、まだ動かなくていい？</p>
+      <p class="hero-meta">10問でチェック ／ 約2分 ／ 無料・登録不要</p>
+      <button class="cta" data-open-quiz>今の自分を診断する <span class="cta-arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><strong>求人業務 約10年</strong><span>求人の作成・確認に携わってきました</span></div>
+      <div class="trust-item"><strong>数千件の求人</strong><span>見る側・作る側の両方を経験</span></div>
+      <div class="trust-item"><strong>仕事相談も数千件規模</strong><span>まず悩みを整理することから</span></div>
+    </div>
+    <p class="trust-note">求人を「見る側」だけじゃない。<br><em>「作る側」も知っている</em>から、違う角度で一緒に考えます。</p>
+  </div>
+</section>
+
+<section class="concerns">
+  <div class="container">
+    <div class="eyebrow">こんな気持ちありませんか？</div>
+    <h2 class="section-title">転職したい。<br>でも、何から始めたらいいかわからない。</h2>
+    <p class="section-lead">「辞めるかどうか」をいきなり決めなくても大丈夫。まずは、今の気持ちと状況を整理してみませんか？</p>
+    <div class="concern-grid">
+      <article class="concern-card"><div class="concern-bubble">このまま<br>続けていいのかな…</div><img src="assets/type6.jpg" alt="悩んでいる人"></article>
+      <article class="concern-card"><div class="concern-bubble">転職したほうがいい気もするけど<br>決断できない…</div><img src="assets/type3.jpg" alt="迷っている人"></article>
+      <article class="concern-card"><div class="concern-bubble">自分に何が向いているのか<br>わからない…</div><img src="assets/type4.jpg" alt="自分を探している人"></article>
+      <article class="concern-card"><div class="concern-bubble">誰かに相談したいけど<br>話せる相手がいない…</div><img src="assets/type1.jpg" alt="相談したい人"></article>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="container">
+    <div class="eyebrow">この診断でわかること</div>
+    <h2 class="section-title">今のあなたを整理して、<br>次の一歩を考える。</h2>
+    <div class="value-grid">
+      <div class="value-item"><div class="value-icon">10</div><h3>10問に答える</h3><p>書き出し不要。タップだけで、今の気持ちや状態を整理します。</p></div>
+      <div class="value-item"><div class="value-icon">6</div><h3>6つのタイプから整理</h3><p>悩み方・動き方・強みの傾向から、今のあなたに近いタイプを見つけます。</p></div>
+      <div class="value-item"><div class="value-icon">→</div><h3>次に何をするかが見える</h3><p>「残る」「転職する」「情報収集する」など、選択肢を整理するきっかけにします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="types">
+  <div class="container">
+    <div class="eyebrow">RESULT TYPE</div>
+    <h2 class="section-title">診断結果は、6つのタイプ。</h2>
+    <p class="section-lead">タイプ名だけで終わらず、「今の状態」「隠れた強み」「整理したいこと」「次の一歩」まで見えるようにしています。</p>
+    <div class="type-grid">
+      <article class="type-card"><div class="type-img"><img src="assets/type1.jpg" alt="我慢しすぎタイプ"></div><div class="type-body"><div class="type-tag">我慢しすぎタイプ</div><p>周りを優先して、自分の気持ちを後回しにしがち。</p></div></article>
+      <article class="type-card"><div class="type-img"><img src="assets/type2.jpg" alt="転職迷子タイプ"></div><div class="type-body"><div class="type-tag">転職迷子タイプ</div><p>変えたい気持ちはある。でも、どこへ進むかがまだ決まらない。</p></div></article>
+      <article class="type-card"><div class="type-img"><img src="assets/type3.jpg" alt="行動ストップタイプ"></div><div class="type-body"><div class="type-tag">行動ストップタイプ</div><p>動きたい。でも、失敗や面倒さがブレーキになりやすい。</p></div></article>
+      <article class="type-card"><div class="type-img"><img src="assets/type4.jpg" alt="自分探しタイプ"></div><div class="type-body"><div class="type-tag">自分探しタイプ</div><p>自分の強みや、向いている環境がまだ言葉になっていない。</p></div></article>
+      <article class="type-card"><div class="type-img"><img src="assets/type5.jpg" alt="環境見直しタイプ"></div><div class="type-body"><div class="type-tag">環境見直しタイプ</div><p>仕事内容より、今の職場や人間関係との相性が気になっている。</p></div></article>
+      <article class="type-card"><div class="type-img"><img src="assets/type6.jpg" alt="慎重判断タイプ"></div><div class="type-body"><div class="type-tag">慎重判断タイプ</div><p>簡単には決めない。納得できる材料を集めてから動きたい。</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="container">
+    <div class="step-box">
+      <div class="step-title">診断はかんたん3ステップ</div>
+      <div class="step-grid">
+        <div class="step"><div class="step-num">STEP 01</div><h3>10問に答える</h3><p>「はい・どちらでもない・いいえ」から直感で選ぶだけ。</p></div>
+        <div class="step"><div class="step-num">STEP 02</div><h3>タイプがわかる</h3><p>今の状態だけでなく、隠れた強みと整理ポイントまで確認。</p></div>
+        <div class="step"><div class="step-num">STEP 03</div><h3>次の一歩を考える</h3><p>必要なら、診断結果をもとに無料で一緒に整理できます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <div class="eyebrow">START HERE</div>
+    <h2>まずは、今の自分を知る。</h2>
+    <p>転職するかどうかは、あとで決めればOK。<br>まずは10問、答えてみてください。</p>
+    <button class="cta" data-open-quiz>今の自分を診断する <span class="cta-arrow">→</span></button>
+  </div>
+</section>
+</main>
+<footer class="footer">© 次の一歩相談室｜現場の味方</footer>
+
+<div class="modal" id="quizModal" aria-hidden="true">
+  <div class="quiz" role="dialog" aria-modal="true" aria-labelledby="qTitle">
+    <div class="quiz-top">
+      <div class="quiz-head"><strong id="qCount">Q1 / 10</strong><button class="close" id="closeQuiz" aria-label="閉じる">×</button></div>
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+    <div class="quiz-body" id="quizBody"></div>
+    <div class="quiz-bottom" id="quizControls"><button class="secondary-btn" id="prevBtn">← 戻る</button><button class="primary-btn" id="nextBtn" disabled>次へ →</button></div>
+    <div class="result" id="resultPanel"></div>
+  </div>
+</div>
+
+<script>
+const LINE_URL='https://lin.ee/vPIlRje';
+const questions=[
+ {t:'今の仕事に「もう少しこうだったら…」と思うことがある。',opts:['はい','どちらでもない','いいえ']},
+ {t:'転職したほうがいいと思っているのに、なかなか行動に移せない。',opts:['はい','どちらでもない','いいえ']},
+ {t:'次の会社でも、また失敗したらどうしようと不安になることがある。',opts:['はい','どちらでもない','いいえ']},
+ {t:'「自分に向いていること」や「自分の強み」をうまく説明できない。',opts:['はい','どちらでもない','いいえ']},
+ {t:'仕事内容より、人間関係・評価・働き方など「職場の環境」のほうが気になっている。',opts:['はい','どちらでもない','いいえ']},
+ {t:'求人を見ても、何を基準に選べばいいのかわからない。',opts:['はい','どちらでもない','いいえ']},
+ {t:'仕事で「助かった」「ありがとう」と言われたり、人から頼られたりすることがある。',opts:['はい','どちらでもない','いいえ']},
+ {t:'相手の学歴や社会的な立場を気にしながら、話すことがある。',opts:['はい','どちらでもない','いいえ']},
+ {t:'誰かが困っていると、「自分にできることはないかな」と思うほうだ。',opts:['はい','どちらでもない','いいえ']},
+ {t:'相手の表情や言葉のちょっとした変化が、気になるほうだ。',opts:['はい','どちらでもない','いいえ']}
+];
+let current=0;const answers=new Array(questions.length).fill(null);
+const modal=document.getElementById('quizModal'),body=document.getElementById('quizBody'),qCount=document.getElementById('qCount'),progress=document.getElementById('progressBar'),nextBtn=document.getElementById('nextBtn'),prevBtn=document.getElementById('prevBtn'),controls=document.getElementById('quizControls'),resultPanel=document.getElementById('resultPanel');
+
+document.querySelectorAll('[data-open-quiz]').forEach(b=>b.addEventListener('click',openQuiz));
+document.getElementById('closeQuiz').addEventListener('click',closeQuiz);
+modal.addEventListener('click',e=>{if(e.target===modal)closeQuiz()});
+prevBtn.addEventListener('click',()=>{if(current>0){current--;renderQuestion()}});
+nextBtn.addEventListener('click',()=>{if(answers[current]===null)return;if(current<questions.length-1){current++;renderQuestion()}else{showResult()}});
+
+function openQuiz(){current=0;answers.fill(null);resultPanel.classList.remove('is-visible');controls.style.display='flex';body.style.display='block';renderQuestion();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeQuiz(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function renderQuestion(){
+ const q=questions[current];qCount.textContent=`Q${current+1} / ${questions.length}`;progress.style.width=`${((current+1)/questions.length)*100}%`;
+ body.innerHTML=`<h3 class="question-title" id="qTitle">${q.t}</h3><p class="question-sub">いちばん近いものを1つ選んでください。</p><div class="answers">${q.opts.map((o,i)=>`<button class="answer" data-i="${i}"><strong>${o}</strong><span>${i===0?'今の自分に近い':i===1?'どちらともいえない':'今はそこまで感じない'}</span></button>`).join('')}</div>`;
+ document.querySelectorAll('.answer').forEach(btn=>btn.addEventListener('click',()=>{answers[current]=Number(btn.dataset.i);document.querySelectorAll('.answer').forEach(x=>x.style.borderColor='#dce9ef');btn.style.borderColor='#35a5c9';nextBtn.disabled=false;nextBtn.textContent=current===questions.length-1?'結果を見る →':'次へ →'}));
+ if(answers[current]!==null){const b=document.querySelector(`.answer[data-i="${answers[current]}"]`);if(b){b.style.borderColor='#35a5c9';nextBtn.disabled=false}}
+ prevBtn.disabled=current===0;
+ nextBtn.textContent=current===questions.length-1?'結果を見る →':'次へ →';
+}
+
+function showResult(){
+ const isYes=i=>answers[i]===0, isMid=i=>answers[i]===1, isNo=i=>answers[i]===2;
+ const score={
+   patience:(isYes(0)?2:0)+(isYes(7)?1.5:0)+(isYes(8)?1.25:0)+(isYes(9)?1.25:0),
+   lost:(isYes(0)?1:0)+(isYes(3)?2:0)+(isYes(5)?2:0)+(isMid(3)?1:0)+(isMid(5)?1:0),
+   stop:(isYes(1)?2.5:0)+(isYes(2)?2:0)+(isMid(1)?1:0)+(isMid(2)?1:0),
+   self:(isYes(3)?2.5:0)+(isYes(6)?1.5:0)+(isYes(8)?1:0)+(isYes(9)?1:0),
+   environment:(isYes(0)?1:0)+(isYes(4)?2.5:0)+(isYes(6)?0.75:0),
+   cautious:(isYes(2)?1.75:0)+(isYes(5)?2:0)+(isYes(7)?0.75:0)+(isNo(1)?0.5:0)
+ };
+ const priority=['environment','stop','lost','self','patience','cautious'];
+ const max=Math.max(...Object.values(score));
+ const key=priority.find(k=>score[k]===max)||'lost';
+ const results={
+  patience:{name:'我慢しすぎタイプ',image:'assets/type1.jpg',state:'周りを優先して、自分のしんどさを後回しにしていませんか？',worries:['「まだ頑張れる」と思ってしまう','周りに迷惑をかけたくなくて言い出せない','辞めるほどではないと思って我慢してしまう'],strengths:['周囲への配慮ができる','責任感を持って最後までやり切れる','人の変化や状況に気づきやすい'],organize:'「辞めたいかどうか」より先に、「何が一番しんどいのか」を整理する。',next:'今の仕事で「もう少し変わってほしい」と思うことを1つだけ見つけてみましょう。'},
+  lost:{name:'転職迷子タイプ',image:'assets/type2.jpg',state:'転職したい気持ちはある。でも、どこへ進むかがまだ決まっていない状態かもしれません。',worries:['求人を見るほど選べなくなる','どんな仕事が自分に合うのかわからない','条件を見比べるだけで疲れてしまう'],strengths:['いろいろな可能性を考えられる','勢いだけで決めず情報を集められる','自分に合うものを納得して選びたい意識がある'],organize:'「何の仕事をするか」より先に、「仕事で何を大切にしたいか」を整理する。',next:'給与・働き方・人間関係・仕事内容など、仕事選びで大切にしたいことを3つに絞ってみましょう。'},
+  stop:{name:'行動ストップタイプ',image:'assets/type3.jpg',state:'動きたい気持ちはある。でも、失敗するのが怖くて止まってしまっているのかもしれません。',worries:['求人は見るけど応募まで進まない','考えているうちに時間だけ過ぎる','「もし合わなかったら」と不安になる'],strengths:['リスクを想像して慎重に考えられる','重要な決断を雑にしない','納得できる材料を集めようとする'],organize:'何が怖くて動けないのかを、「お金」「環境」「仕事内容」などに分けて具体化する。',next:'「転職する」ではなく、「求人を1つ見る」「仕事内容を調べる」など小さな行動から始める。'},
+  self:{name:'自分探しタイプ',image:'assets/type4.jpg',state:'自分の強みや、向いている環境がまだ言葉になっていない状態かもしれません。',worries:['「自分の強みは？」と聞かれると困る','向いている仕事がわからない','経験が強みになるのか自信がない'],strengths:['人から頼られることがある','自然にできていることがある','相手の変化や困りごとに気づける可能性がある'],organize:'「得意なこと」だけでなく、「人から頼られること」「当たり前にできること」を整理する。',next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ挙げてみる。'},
+  environment:{name:'環境見直しタイプ',image:'assets/type5.jpg',state:'仕事内容そのものより、今の職場・人間関係・評価などとの相性が気になっているのかもしれません。',worries:['仕事自体は嫌いじゃない','上司や人間関係で消耗する','評価や働き方にモヤモヤする'],strengths:['自分が力を発揮しやすい環境を感じ取れる','周囲との相性を見ながら動ける','働き方に対する希望がはっきりしている'],organize:'「仕事が嫌なのか」「環境が合わないのか」を分けて考える。',next:'仕事内容・人間関係・働き方・評価の中から、一番変えたいものを1つ決めてみる。'},
+  cautious:{name:'慎重判断タイプ',image:'assets/type6.jpg',state:'簡単には決めない。失敗を避けて、納得してから動きたいタイプかもしれません。',worries:['転職を決めるには情報が足りない気がする','今より悪くなったらどうしようと考える','決断した後に後悔するのが怖い'],strengths:['先のことまで考えて判断できる','一度決めたことに責任を持とうとする','重要な選択を雑にしない'],organize:'「何がわかれば、自分は納得して決められるのか」を明確にする。',next:'転職を決めるのではなく、「あと何を知れば判断できるか」を3つに分けてみる。'}
+ }[key];
+ const worryList=results.worries.map(v=>`<li>${v}</li>`).join('');
+ const strengthList=results.strengths.map(v=>`<li>${v}</li>`).join('');
+ body.style.display='none';controls.style.display='none';
+ resultPanel.innerHTML=`
+  <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
+  <span class="result-badge">あなたの診断結果</span>
+  <h2>${results.name}</h2>
+  <div class="result-sections">
+    <div class="result-box"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
+    <div class="result-box"><h4>③ よくある悩み</h4><ul>${worryList}</ul></div>
+    <div class="result-box result-strength"><h4>④ 隠れた強み</h4><ul>${strengthList}</ul></div>
+    <div class="result-box"><h4>⑤ 今整理すべきこと</h4><p>${results.organize}</p></div>
+    <div class="result-box result-next"><h4>⑥ 次の一歩</h4><p>${results.next}</p></div>
+  </div>
+  <div class="result-actions"><a class="line-btn" href="${LINE_URL}" target="_blank" rel="noopener">⑦ 診断結果を基に無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
+  <p class="result-note">この診断は、今の仕事やキャリアについて整理するための簡易チェックです。転職や就職を一律に勧めるものではありません。</p>`;
+ resultPanel.classList.add('is-visible');
+ document.getElementById('retryBtn').addEventListener('click',openQuiz);
+}
+</script>
+</body>
+</html>
