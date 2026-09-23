@@ -113,6 +113,22 @@ img{max-width:100%}
 
 /* On phones: switch to the dedicated 2:3 mobile image. */
 @media (max-width:640px){.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.14) 36%,rgba(255,255,255,.84) 66%,rgba(255,255,255,.97) 100%)}}
+
+/* FINAL FV: the same 2:3 handwritten visual is used on PC and mobile. Only the CTA is live HTML. */
+.hero{position:relative;overflow:hidden;background:#eaf7ff;padding:0;}
+.hero-media{position:relative;inset:auto;z-index:0;width:min(100%,720px);margin:0 auto;aspect-ratio:2/3;overflow:hidden;background:#dff3ff;}
+.hero-media picture,.hero-media img{width:100%;height:100%;display:block;}
+.hero-media img{object-fit:cover;object-position:center;}
+.hero::after{display:none;}
+.hero-inner{position:absolute;inset:0;z-index:2;width:min(100%,720px);margin:0 auto;min-height:0;padding:0;}
+.hero-copy{position:absolute;left:7%;right:7%;bottom:4.2%;width:auto;display:flex;justify-content:center;}
+.hero-copy .cta{min-width:0;width:min(520px,100%);background:#ff6969;color:#fff;border:3px solid #fff;box-shadow:0 12px 28px rgba(0,0,0,.18);font-size:clamp(17px,2.2vw,22px);padding:15px 24px;}
+@media (max-width:640px){
+  .hero-media{width:100%;}
+  .hero-inner{width:100%;}
+  .hero-copy{left:8%;right:8%;bottom:4%;}
+  .hero-copy .cta{font-size:17px;padding:14px 20px;}
+}
 </style>
 </head>
 <body>
@@ -121,15 +137,11 @@ img{max-width:100%}
   <div class="hero-media">
     <picture>
       <source media="(max-width: 640px)" srcset="assets/hero-sp.jpg">
-      <img src="assets/hero-pc.jpg" alt="街を見つめる若者のイメージ">
+      <img src="assets/hero-pc.jpg" alt="転職迷子診断｜街を見つめる若者のイメージ">
     </picture>
   </div>
-  <div class="container hero-inner">
+  <div class="hero-inner">
     <div class="hero-copy">
-      <div class="hero-kicker">次の一歩、きっと見つかる。</div>
-      <h1><span class="marker">転職迷子</span>診断</h1>
-      <p class="hero-lead">転職したほうがいい？<br>それとも、まだ動かなくていい？</p>
-      <p class="hero-meta">10問でチェック ／ 約2分 ／ 無料・登録不要</p>
       <button class="cta" data-open-quiz>今の自分を診断する <span class="cta-arrow">→</span></button>
     </div>
   </div>
