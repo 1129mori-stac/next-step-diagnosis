@@ -232,6 +232,131 @@ img{max-width:100%}
   .model-case-image{aspect-ratio:4/3}
 }
 
+
+/* v9 hero polish */
+.hero{position:relative;min-height:clamp(520px,56.25vw,760px);overflow:hidden;background:#e8f7ff}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media picture,.hero-media img{width:100%;height:100%;display:block}
+.hero-media img{object-fit:cover;object-position:center}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.72) 30%,rgba(255,255,255,.12) 62%,rgba(7,39,60,.10) 100%)}
+.hero-inner{position:relative;z-index:2;min-height:clamp(520px,56.25vw,760px);display:flex;align-items:center;padding:70px 0 58px}
+.hero-copy{width:min(640px,100%)}
+.hero-kicker{font-size:18px;font-weight:900;color:#143b56;margin-bottom:5px;letter-spacing:.04em}
+.hero-title-image{display:block;width:min(620px,95%);height:auto;margin:0 0 6px;filter:drop-shadow(0 2px 0 rgba(255,255,255,.35))}
+.hero-subtitle-image{display:block;width:min(470px,80%);height:auto;margin:0 0 14px}
+.hero-meta{margin-bottom:22px}
+.hero .cta{min-width:320px}
+.hero-copy .cta{background:#ff6969;color:#fff;border:3px solid #fff;box-shadow:0 14px 30px rgba(255,105,105,.28);font-size:clamp(17px,2vw,22px);padding:16px 26px}
+
+/* v9 quiz: compact, visual, tap-to-advance */
+.quiz{width:min(900px,96vw)}
+.quiz-body{padding:10px 24px 20px}
+.quiz-progress-note{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#6b818b;font-size:11px;font-weight:900}
+.quiz-question-layout{display:grid;grid-template-columns:minmax(240px,.78fr) minmax(360px,1.22fr);gap:18px;align-items:center}
+.question-visual{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:18px;background:#edf8ff;border:1px solid #e0edf2;box-shadow:0 10px 24px rgba(26,85,111,.06)}
+.question-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.question-panel{min-width:0}
+.question-title{font-size:clamp(22px,2.8vw,30px);line-height:1.5;margin:0 0 14px;letter-spacing:-.02em}
+.answers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.answer{min-height:58px;border:1.5px solid #dce9ef;background:#fff;border-radius:16px;padding:13px 8px;text-align:center;cursor:pointer;transition:.18s transform,.18s border-color,.18s box-shadow,.18s background;display:flex;align-items:center;justify-content:center}
+.answer strong{display:block;font-size:16px;line-height:1.3}
+.answer span{display:none}
+.answer::after{right:10px;width:25px;height:25px;font-size:13px}
+.quiz-bottom{padding:0 24px 20px}
+.quiz-bottom .secondary-btn{padding:9px 12px;font-size:12px}
+
+/* v9 result: character + ②③④ in one card */
+.result-summary-card{background:#fff;border:1px solid #d9edf5;border-radius:22px;overflow:hidden;box-shadow:0 16px 34px rgba(26,85,111,.07);margin-bottom:16px}
+.result-summary-card .result-top{padding:0 0 10px}
+.result-summary-card .result-character{margin:0;border-radius:0;aspect-ratio:16/8}
+.result-summary-card .result-badge,.result-summary-card h2,.result-summary-card .result-lead{margin-left:18px;margin-right:18px}
+.result-summary-card .result-badge{margin-top:15px}
+.result-summary-card h2{margin-top:9px}
+.result-summary-card .result-lead{margin-bottom:5px}
+.result-summary-card .result-card{border:0;border-radius:0;box-shadow:none;padding:0 18px 18px;background:transparent}
+
+@media (max-width:640px){
+  .hero{min-height:760px}
+  .hero-media img{object-position:center top}
+  .hero-shade{background:linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.08) 48%,rgba(255,255,255,.84) 68%,rgba(255,255,255,.98) 100%)}
+  .hero-inner{min-height:760px;align-items:flex-end;padding:90px 0 28px}
+  .hero-copy{width:100%;padding:0 8%}
+  .hero-kicker{font-size:15px;margin-bottom:2px}
+  .hero-title-image{width:100%;max-width:none;margin-bottom:8px}
+  .hero-subtitle-image{width:94%;max-width:none;margin-bottom:13px}
+  .hero-meta{gap:7px;margin-bottom:16px}
+  .hero-meta span{font-size:10px;padding:7px 9px}
+  .hero-copy .cta{width:100%;min-width:0;font-size:17px;padding:14px 20px}
+  .quiz{border-radius:22px}
+  .quiz-top{padding:15px 16px 0}
+  .quiz-question-layout{grid-template-columns:1fr;gap:12px}
+  .question-visual{aspect-ratio:16/9;border-radius:16px}
+  .question-title{font-size:20px;line-height:1.5;margin-bottom:13px}
+  .answers{gap:8px}
+  .answer{min-height:52px;padding:11px 4px;border-radius:14px}
+  .answer strong{font-size:14px}
+  .quiz-body{padding:8px 16px 16px}
+  .quiz-bottom{padding:0 16px 16px}
+  .result-summary-card .result-character{aspect-ratio:4/3}
+  .result-summary-card .result-badge,.result-summary-card h2,.result-summary-card .result-lead{margin-left:14px;margin-right:14px}
+  .result-summary-card .result-card{padding:0 14px 14px}
+}
+
+
+/* v10 hero: image itself contains the handwritten title/subtitle; live CTA only */
+.hero{position:relative;overflow:hidden;background:#e8f7ff}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media picture,.hero-media img{width:100%;height:100%;display:block}
+.hero-media img{object-fit:cover;object-position:center}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.02) 55%,rgba(4,31,45,.10) 100%)}
+.hero-inner{position:relative;z-index:2;min-height:clamp(450px,47.25vw,680px);display:flex;align-items:flex-end;padding:0 0 6.5vw}
+.hero-copy{width:100%;padding-left:7.5%}
+.hero-kicker,.hero-title-image,.hero-subtitle-image{display:none!important}
+.hero-meta{margin:0 0 14px;display:flex;gap:8px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.93);border:1px solid rgba(37,124,163,.18);box-shadow:0 8px 18px rgba(20,66,89,.08);border-radius:999px;padding:7px 11px;color:#1a5570;font-size:12px;font-weight:900}
+.hero-copy .cta{background:#ff6969;color:#fff;border:3px solid #fff;box-shadow:0 14px 30px rgba(255,105,105,.28);font-size:clamp(17px,2vw,22px);padding:16px 28px;min-width:310px}
+@media (max-width:640px){
+  .hero{min-height:760px}
+  .hero-media img{object-position:center top}
+  .hero-shade{background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.02) 52%,rgba(255,255,255,.45) 69%,rgba(255,255,255,.92) 100%)}
+  .hero-inner{min-height:760px;align-items:flex-end;padding:0 0 28px}
+  .hero-copy{width:100%;padding:0 8%}
+  .hero-meta{gap:6px;margin-bottom:12px}
+  .hero-meta span{font-size:10px;padding:6px 8px}
+  .hero-copy .cta{width:100%;min-width:0;font-size:17px;padding:14px 20px}
+}
+
+
+/* v10 quiz compact polish */
+.quiz{width:min(920px,96vw)}
+.quiz-top{padding:17px 20px 0}
+.quiz-body{padding:8px 20px 16px}
+.quiz-question-layout{grid-template-columns:minmax(250px,.72fr) minmax(420px,1.28fr);gap:16px}
+.question-visual{aspect-ratio:16/10;border-radius:16px}
+.question-title{font-size:clamp(21px,2.6vw,29px);line-height:1.46;margin:0 0 12px}
+.answers{grid-template-columns:repeat(3,1fr);gap:8px}
+.answer{min-height:54px;border-radius:14px;padding:10px 5px}
+.answer strong{font-size:15px}
+@media (max-width:640px){
+  .quiz{width:96vw;max-height:92vh}
+  .quiz-top{padding:14px 14px 0}
+  .quiz-body{padding:7px 14px 14px}
+  .question-visual{aspect-ratio:16/9}
+  .question-title{font-size:19px;line-height:1.48;margin-bottom:11px}
+  .answers{gap:6px}
+  .answer{min-height:50px;padding:9px 3px}
+  .answer strong{font-size:13px}
+}
+
+
+/* v10 result summary card visual */
+.result-summary-card{margin-bottom:18px;border-radius:22px}
+.result-summary-card .result-character{aspect-ratio:16/7.2}
+.result-summary-card .result-top{padding-bottom:10px}
+.result-summary-card .result-card-grid{gap:9px}
+.result-summary-card .result-mini{padding:13px 14px}
+@media (max-width:640px){.result-summary-card .result-character{aspect-ratio:16/9}}
+
 </style>
 </head>
 <body>
@@ -240,14 +365,15 @@ img{max-width:100%}
   <div class="hero-media">
     <picture>
       <source media="(max-width: 640px)" srcset="assets/hero-sp.jpg">
-      <img src="assets/hero-pc.jpg" alt="転職迷子診断｜街を見つめる若者のイメージ">
+      <img src="assets/hero-pc.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
     </picture>
   </div>
+  <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-kicker">次の一歩、きっと見つかる。</div>
-      <h1><span class="marker">転職迷子診断</span></h1>
-      <p class="hero-lead">転職したほうがいい？<br>それとも、まだ動かなくていい？</p>
+      <img class="hero-title-image" src="assets/hero-title.png" alt="転職迷子診断">
+      <img class="hero-subtitle-image" src="assets/hero-subtitle.png" alt="転職したほうがいい？それとも、まだ動かなくていい？">
       <div class="hero-meta"><span>⏱ 10問・約2分</span><span>✓ 無料・登録不要</span><span>6タイプから整理</span></div>
       <button class="cta" data-open-quiz>今の自分を診断する <span class="cta-arrow">→</span></button>
     </div>
@@ -336,8 +462,7 @@ img{max-width:100%}
     <div class="quiz-top">
       <div class="quiz-head"><strong id="qCount">Q1 / 10</strong><button class="close" id="closeQuiz" aria-label="閉じる">×</button></div>
       <div class="progress"><span id="progressBar"></span></div>
-      <div class="quiz-progress-note"><span id="progressText">まずは1問目。直感でOK</span><strong id="remainingText">残り10問</strong></div>
-      <div class="quiz-reward" id="quizReward">1問答えるたびに、診断が1ステップ進みます。</div>
+      <div class="quiz-progress-note"><span id="progressText">直感でOK</span><strong id="remainingText">残り10問</strong></div>
     </div>
     <div class="quiz-body" id="quizBody"></div>
     <div class="quiz-bottom" id="quizControls"><button class="secondary-btn" id="prevBtn">← 戻る</button></div>
@@ -370,34 +495,8 @@ const controls=document.getElementById('quizControls');
 const resultPanel=document.getElementById('resultPanel');
 const progressText=document.getElementById('progressText');
 const remainingText=document.getElementById('remainingText');
-const quizReward=document.getElementById('quizReward');
 let transitionLock=false;
-let rewardTimer=null;
 
-const progressMessages=[
-  'まずは1問目。直感でOK',
-  'いいペース、そのまま進もう',
-  'ここまで順調。あと少し',
-  '半分手前、もうすぐ折り返し',
-  'ここで折り返し！',
-  'あと4問。だんだん輪郭が見えてきます',
-  'あと3問。もう少し',
-  'あと2問。ラストスパート',
-  'ラスト1問！',
-  '診断完了！結果を整理しています…'
-];
-const rewardMessages=[
-  '✓ 1問クリア！まずはここまで◎',
-  '✓ 2問クリア！いいペース！',
-  '✓ 3問クリア！ここまで順調',
-  '✓ 4問クリア！あと6問',
-  '🎉 5問クリア！半分まで来ました',
-  '✓ 6問クリア！あと4問',
-  '✓ 7問クリア！あと3問',
-  '✓ 8問クリア！あと2問',
-  '🔥 9問クリア！ラスト1問',
-  '🎁 診断完了！あなたのタイプをチェック'
-];
 
 document.querySelectorAll('[data-open-quiz]').forEach(b=>b.addEventListener('click',openQuiz));
 document.getElementById('closeQuiz').addEventListener('click',closeQuiz);
@@ -432,9 +531,8 @@ function burstConfetti(target){
 function updateQuizHeader(){
   qCount.textContent=`Q${current+1} / ${questions.length}`;
   progress.style.width=`${((current+1)/questions.length)*100}%`;
-  progressText.textContent=progressMessages[current]||'';
+  progressText.textContent=current===0?'直感でOK':current===questions.length-1?'ラスト1問！':'直感でOK';
   remainingText.textContent=current<questions.length-1?`残り${questions.length-current}問`:'最後の1問';
-  quizReward.textContent=current===0?'1問答えるたびに、診断が1ステップ進みます。':'答えた分だけ、あなたの診断が進んでいます。';
 }
 function openQuiz(){
   current=0;answers.fill(null);transitionLock=false;
@@ -457,7 +555,7 @@ function renderQuestion(){
   transitionLock=false;
   updateQuizHeader();
   const q=questions[current];
-  body.innerHTML=`<h3 class="question-title" id="qTitle">${q.t}</h3><p class="question-sub">いちばん近いものを1つ選んでください。選んだら自動で次へ進みます。</p><div class="answers">${q.opts.map((o,i)=>`<button class="answer" data-i="${i}"><strong>${o}</strong><span>${i===0?'今の自分に近い':i===1?'どちらともいえない':'今はそこまで感じない'}</span></button>`).join('')}</div>`;
+  body.innerHTML=`<div class="quiz-question-layout"><div class="question-visual"><img src="assets/q${current+1}.jpg" alt="設問${current+1}のイメージ"></div><div class="question-panel"><h3 class="question-title" id="qTitle">${q.t}</h3><div class="answers">${q.opts.map((o,i)=>`<button class="answer" data-i="${i}"><strong>${o}</strong></button>`).join('')}</div></div></div>`;
   document.querySelectorAll('.answer').forEach(btn=>btn.addEventListener('click',()=>selectAnswer(btn)));
   if(answers[current]!==null){
     const b=document.querySelector(`.answer[data-i="${answers[current]}"]`);
@@ -473,12 +571,8 @@ function selectAnswer(btn){
   document.querySelectorAll('.answer').forEach(x=>x.classList.remove('is-selected','is-pressed'));
   btn.classList.add('is-selected','is-pressed');
   const completed=current+1;
-  quizReward.textContent=rewardMessages[current];
-  quizReward.classList.remove('is-pop');void quizReward.offsetWidth;quizReward.classList.add('is-pop');
-  showToast(rewardMessages[current]);
+  showToast(completed===questions.length?'🎉 診断完了！結果を整理中…':`✓ ${completed}問クリア！`);
   burstConfetti(btn);
-  progressText.textContent=completed===questions.length?'診断完了！結果を整理しています…':progressMessages[Math.min(completed,progressMessages.length-1)];
-  remainingText.textContent=completed===questions.length?'結果へ':'残り'+(questions.length-completed)+'問';
   setTimeout(()=>{
     if(current<questions.length-1){current++;renderQuestion();}
     else{showResult();}
@@ -508,7 +602,7 @@ function showResult(){
       next:'今の仕事で「もう少し変わってほしい」と思うことを1つだけ見つけてみましょう。',
       trigger:'「まだ大丈夫」と言い続けるより、我慢が当たり前になってきたと感じたら、転職を選択肢に入れるタイミングです。',
       modelTitle:'我慢を続ける働き方から、無理をしなくていい環境へ',
-      modelText:'最初は「辞めるほどではない」と思っていたAさん。1日目に不満を3つに分け、7日目に「変えたい条件」を整理。1か月目には3社を比較し、仕事内容よりも人間関係と働き方を重視。3か月目、条件に納得できる会社へ転職を決めました。',
+      modelText:'最初は「辞めるほどではない」と思っていたAさん。1日目には不満を3つに分け、7日目に「変えたい条件」を整理。1か月目には3社を比較し、仕事内容よりも人間関係と働き方を重視。3か月目、条件に納得できる会社へ転職を決めました。',
       timeline:[
         ['1日目','まずは「仕事内容・人間関係・働き方」の3つに分けて、いちばん苦しいポイントを特定。','何を変えればラクになるかが見える。'],
         ['7日目','今の会社で変えられること／変えにくいことを整理し、転職先に求める条件を3つに絞る。','「辞めたい」だけだった気持ちが「こういう環境なら働きたい」に変わる。'],
@@ -525,7 +619,7 @@ function showResult(){
       next:'給与・働き方・人間関係・仕事内容など、仕事選びで大切にしたいことを3つに絞ってみましょう。',
       trigger:'3つの仕事選びの軸が決まり、「この条件なら探せる」と思えるようになったら、転職活動を本格化するタイミングです。',
       modelTitle:'「何がいいかわからない」から、選べる自分へ',
-      modelText:'Bさんは求人を見るたびに迷っていました。1日目に条件を「絶対ほしい・できればほしい・なくてもいい」に整理。7日目に5社を比較し、1か月目には3社へ応募。3か月目、軸に一番合う会社の内定を選びました。',
+      modelText:'Bさんは求人を見るたびに迷っていました。1日目には条件を「絶対ほしい・できればほしい・なくてもいい」に整理。7日目に5社を比較し、1か月目には3社へ応募。3か月目、軸に一番合う会社の内定を選びました。',
       timeline:[
         ['1日目','給与・仕事内容・働き方・人間関係から「絶対に譲れない3つ」を決める。','求人を見るたびに迷う状態から抜け出す。'],
         ['7日目','気になる求人を5社並べ、3つの軸で○△×をつけて比較する。','「なんとなく良さそう」ではなく、選ぶ理由が言葉になる。'],
@@ -559,7 +653,7 @@ function showResult(){
       next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ挙げてみる。',
       trigger:'自分の強みと、活かせそうな求人が1本の線でつながってきたら、転職を前向きに考えるタイミングです。',
       modelTitle:'「強みがない」から、「これなら活かせる」へ',
-      modelText:'Dさんは自分の強みが分かりませんでした。1日目に過去に頼られたことを整理。7日目にそれを仕事のスキルに言い換え、1か月目に強みを活かせる職種へ応募。3か月目、面接で評価される経験と出会い、転職を決めました。',
+      modelText:'Dさんは自分の強みが分かりませんでした。1日目には過去に頼られたことを整理。7日目にそれを仕事のスキルに言い換え、1か月目に強みを活かせる職種へ応募。3か月目、面接で評価される経験と出会い、転職を決めました。',
       timeline:[
         ['1日目','仕事とプライベートの両方から「人に頼られたこと」を3つ集める。','自分では普通だと思っていた行動が、強みの候補になる。'],
         ['7日目','3つの経験を「何をしたか・どう工夫したか・何が喜ばれたか」に分解する。','強みが、職務経歴書で使える言葉になる。'],
@@ -576,7 +670,7 @@ function showResult(){
       next:'仕事内容・人間関係・働き方・評価の中から、一番変えたいものを1つ決めてみる。',
       trigger:'「仕事内容は好き。でも環境が合わない」とはっきりしたら、職場を変える転職を考えるタイミングです。',
       modelTitle:'仕事は好き。だからこそ、環境を変える',
-      modelText:'Eさんは仕事自体は好きでしたが、働き方が合っていませんでした。1日目に仕事内容と環境を切り分け、7日目に「譲れない働き方」を整理。1か月目に条件の合う企業へ応募し、3か月目に働き方が合う会社へ転職しました。',
+      modelText:'Eさんは仕事自体は好きでしたが、働き方が合っていませんでした。1日目には仕事内容と環境を切り分け、7日目に「譲れない働き方」を整理。1か月目に条件の合う企業へ応募し、3か月目に働き方が合う会社へ転職しました。',
       timeline:[
         ['1日目','仕事内容・人間関係・評価・働き方を分け、「どこが原因か」を整理する。','変えるべきものが明確になる。'],
         ['7日目','転職先で「これだけは譲れない」環境条件を3つ決める。','会社名ではなく、環境の条件で求人を探せる。'],
@@ -593,7 +687,7 @@ function showResult(){
       next:'転職を決めるのではなく、「あと何を知れば判断できるか」を3つに分けてみる。',
       trigger:'「あとこれを確認すれば決められる」が明確になったら、転職を判断するタイミングです。',
       modelTitle:'慎重に調べたからこそ、納得して決める',
-      modelText:'Fさんは決断前に情報を集めるタイプでした。1日目に確認したい項目を整理。7日目に企業比較を行い、1か月目に選考へ。3か月目、条件・仕事内容・将来性を確認し、「ここなら納得できる」と思える会社への転職を決めました。',
+      modelText:'Fさんは決断前に情報を集めるタイプでした。1日目には確認したい項目を整理。7日目に企業比較を行い、1か月目に選考へ。3か月目、条件・仕事内容・将来性を確認し、「ここなら納得できる」と思える会社への転職を決めました。',
       timeline:[
         ['1日目','「あと何が分かれば決められる？」を3〜5項目にする。','情報集めが目的ではなく、判断のための情報になる。'],
         ['7日目','求人票だけで分からない部分を企業情報・面談・選考で確認する。','漠然とした不安が、具体的な比較材料になる。'],
@@ -611,29 +705,30 @@ function showResult(){
 
   body.style.display='none';controls.style.display='none';
   resultPanel.innerHTML=`
-    <div class="result-top">
-      <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
-      <span class="result-badge">あなたの診断結果</span>
-      <h2>${results.name}</h2>
-      <p class="result-lead">今の状態を責めるための診断ではありません。<br>「次の一歩」を考えるためのヒントとして受け取ってください。</p>
-    </div>
-
-    <section class="result-card">
-      <div class="result-card-grid">
+    <section class="result-summary-card">
+      <div class="result-top">
+        <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
+        <span class="result-badge">あなたの診断結果</span>
+        <h2>${results.name}</h2>
+        <p class="result-lead">今の状態を責めるための診断ではありません。<br>「次の一歩」を考えるためのヒントとして受け取ってください。</p>
+      </div>
+      <section class="result-card">
+        <div class="result-card-grid">
         <div class="result-mini"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
         <div class="result-mini"><h4>③ よくある悩み</h4><ul>${worries}</ul></div>
         <div class="result-mini strength"><h4>④ 隠れた強み</h4><ul>${strengths}</ul></div>
-      </div>
+        </div>
+      </section>
     </section>
 
     <h3 class="result-subtitle">いつ転職を考える？</h3>
     <div class="result-trigger"><strong>あなたの場合は、このサインが出てきたら。</strong><p>${results.trigger}</p></div>
 
-    <h3 class="result-subtitle">あなたと同じタイプの転職ストーリー</h3>
+    <h3 class="result-subtitle">あなたと同じタイプの3ヶ月モデル</h3>
     <article class="model-case">
       <img class="model-case-image" src="${results.modelImage}" alt="${results.name}の転職ストーリーのイメージ">
       <div class="model-case-body">
-        <span class="model-case-kicker">3ヶ月モデル</span>
+        <span class="model-case-kicker">3ヶ月モデルケース</span>
         <h4>${results.modelTitle}</h4>
         <p>${results.modelText}</p>
       </div>
