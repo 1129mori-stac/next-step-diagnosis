@@ -176,6 +176,66 @@ img{max-width:100%}
   .reward-ladder-grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ===== Result v7: compact card + model case + timeline ===== */
+.result{padding:10px 24px 34px;display:none}
+.result.is-visible{display:block}
+.result-head{text-align:center;margin:2px 0 18px}
+.result-character{width:min(100%,520px);aspect-ratio:16/9;margin:0 auto 14px;overflow:hidden;border-radius:22px;background:#edf8ff;border:1px solid #d9edf5;box-shadow:0 12px 32px rgba(22,76,98,.08)}
+.result-character img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.result-badge{display:inline-flex;padding:7px 11px;border-radius:999px;background:#e8f7ff;color:#13789d;font-weight:1000;font-size:12px}
+.result h2{font-size:clamp(30px,5vw,44px);line-height:1.12;margin:10px 0 8px;font-weight:1000}
+.result-kicker{font-size:13px;color:#6a808a;font-weight:800}
+.insight-card{background:linear-gradient(180deg,#ffffff 0%,#f7fcff 100%);border:1px solid #d9edf5;border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 14px 34px rgba(18,76,101,.07)}
+.insight-card-title{font-size:13px;letter-spacing:.06em;color:#178eb9;font-weight:1000;margin-bottom:10px}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.insight-item{padding:4px 18px 6px;border-right:1px solid var(--line)}
+.insight-item:first-child{padding-left:4px}.insight-item:last-child{border-right:0;padding-right:4px}
+.insight-item h4{margin:0 0 7px;font-size:14px;color:#163f58}
+.insight-item p{margin:0;color:#5f7782;font-size:12px;line-height:1.7;font-weight:700}
+.insight-item ul{margin:0;padding-left:17px;color:#5f7782;font-size:12px;line-height:1.7;font-weight:700}
+.result-trigger{margin-top:14px;background:#fff8dc;border:1px solid #f1df96;border-radius:18px;padding:16px 17px}
+.result-trigger h3,.case-section h3,.timeline-section h3,.next-step-card h3{margin:0 0 8px;font-size:15px;color:#244a5f}
+.result-trigger p{margin:0;color:#5f6f77;font-size:13px;line-height:1.7;font-weight:800}
+.trigger-label{display:inline-block;margin-bottom:7px;padding:5px 9px;border-radius:999px;background:#ffe66b;color:#6f5a00;font-size:11px;font-weight:1000}
+.case-section{margin-top:16px}
+.case-sub{margin:0 0 11px;color:#768891;font-size:11px;line-height:1.55;font-weight:750}
+.case-card{border:1px solid #dcecf3;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 28px rgba(18,76,101,.06)}
+.case-visual{position:relative;aspect-ratio:16/7;overflow:hidden;background:#dfeff6}
+.case-visual img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.95)}
+.case-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,51,75,.02),rgba(11,51,75,.62))}
+.case-overlay{position:absolute;left:15px;right:15px;bottom:13px;z-index:2;color:#fff}
+.case-overlay .case-label{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(16,55,75,.74);font-size:10px;font-weight:1000}
+.case-overlay strong{display:block;margin-top:5px;font-size:16px}
+.case-body{padding:15px 16px 17px}
+.case-body p{margin:0;color:#5f7782;font-size:12px;line-height:1.75;font-weight:700}
+.timeline-section{margin-top:18px}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:11px}
+.timeline-item{position:relative;background:#f7fcff;border:1px solid #dcecf3;border-radius:16px;padding:13px 11px 12px;min-height:145px}
+.timeline-item .time{display:inline-flex;padding:5px 8px;border-radius:999px;background:#e7f6ff;color:#187ea3;font-size:10px;font-weight:1000}
+.timeline-item strong{display:block;margin:8px 0 5px;color:#173f58;font-size:12px}
+.timeline-item p{margin:0;color:#677d86;font-size:11px;line-height:1.6;font-weight:700}
+.timeline-item .goal{margin-top:7px;padding-top:7px;border-top:1px dashed #cfe4ec;color:#1687ad;font-size:10px;font-weight:900}
+.next-step-card{margin-top:16px;border-radius:19px;padding:16px 17px;background:linear-gradient(180deg,#effaff 0%,#fff 100%);border:1px solid #d8edf6}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.next-grid>div{background:#fff;border:1px solid #e2eef3;border-radius:13px;padding:11px 12px}
+.next-grid b{display:block;font-size:11px;color:#178eb9;margin-bottom:5px}.next-grid p{margin:0;color:#607783;font-size:11px;line-height:1.6;font-weight:750}
+.result-actions{display:grid;gap:9px;margin-top:17px}.line-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:#fff;border-radius:15px;padding:15px;font-weight:1000;box-shadow:0 12px 24px rgba(18,184,120,.18)}
+.retry-btn{border:0;background:#eef5f8;color:var(--ink);border-radius:15px;padding:13px;font-weight:1000;cursor:pointer}
+.result-note{margin:11px 0 0;color:#8a9aa1;font-size:10px;line-height:1.6;text-align:center}
+@media(max-width:640px){
+  .result{padding:8px 14px 24px}
+  .result-character{aspect-ratio:4/3;border-radius:18px}
+  .insight-card{padding:14px;border-radius:18px}
+  .insight-grid{grid-template-columns:1fr;gap:0}
+  .insight-item,.insight-item:first-child,.insight-item:last-child{padding:10px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .insight-item:last-child{border-bottom:0}
+  .timeline{grid-template-columns:1fr 1fr}
+  .timeline-item{min-height:132px}
+  .next-grid{grid-template-columns:1fr}
+  .case-visual{aspect-ratio:16/9}
+}
+
 </style>
 </head>
 <body>
@@ -443,40 +503,137 @@ function showResult(){
   const max=Math.max(...Object.values(score));
   const key=priority.find(k=>score[k]===max)||'lost';
   const results={
-   patience:{name:'我慢しすぎタイプ',image:'assets/type1.jpg',state:'周りを優先して、自分のしんどさを後回しにしていませんか？',worries:['「まだ頑張れる」と思ってしまう','周りに迷惑をかけたくなくて言い出せない','辞めるほどではないと思って我慢してしまう'],strengths:['周囲への配慮ができる','責任感を持って最後までやり切れる','人の変化や状況に気づきやすい'],organize:'「辞めたいかどうか」より先に、「何が一番しんどいのか」を整理する。',next:'今の仕事で「もう少し変わってほしい」と思うことを1つだけ見つけてみましょう。'},
-   lost:{name:'転職迷子タイプ',image:'assets/type2.jpg',state:'転職したい気持ちはある。でも、どこへ進むかがまだ決まっていない状態かもしれません。',worries:['求人を見るほど選べなくなる','どんな仕事が自分に合うのかわからない','条件を見比べるだけで疲れてしまう'],strengths:['いろいろな可能性を考えられる','勢いだけで決めず情報を集められる','自分に合うものを納得して選びたい意識がある'],organize:'「何の仕事をするか」より先に、「仕事で何を大切にしたいか」を整理する。',next:'給与・働き方・人間関係・仕事内容など、仕事選びで大切にしたいことを3つに絞ってみましょう。'},
-   stop:{name:'行動ストップタイプ',image:'assets/type3.jpg',state:'動きたい気持ちはある。でも、失敗するのが怖くて止まってしまっているのかもしれません。',worries:['求人は見るけど応募まで進まない','考えているうちに時間だけ過ぎる','「もし合わなかったら」と不安になる'],strengths:['リスクを想像して慎重に考えられる','重要な決断を雑にしない','納得できる材料を集めようとする'],organize:'何が怖くて動けないのかを、「お金」「環境」「仕事内容」などに分けて具体化する。',next:'「転職する」ではなく、「求人を1つ見る」「仕事内容を調べる」など小さな行動から始める。'},
-   self:{name:'自分探しタイプ',image:'assets/type4.jpg',state:'自分の強みや、向いている環境がまだ言葉になっていない状態かもしれません。',worries:['「自分の強みは？」と聞かれると困る','向いている仕事がわからない','経験が強みになるのか自信がない'],strengths:['人から頼られることがある','自然にできていることがある','相手の変化や困りごとに気づける可能性がある'],organize:'「得意なこと」だけでなく、「人から頼られること」「当たり前にできること」を整理する。',next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ挙げてみる。'},
-   environment:{name:'環境見直しタイプ',image:'assets/type5.jpg',state:'仕事内容そのものより、今の職場・人間関係・評価などとの相性が気になっているのかもしれません。',worries:['仕事自体は嫌いじゃない','上司や人間関係で消耗する','評価や働き方にモヤモヤする'],strengths:['自分が力を発揮しやすい環境を感じ取れる','周囲との相性を見ながら動ける','働き方に対する希望がはっきりしている'],organize:'「仕事が嫌なのか」「環境が合わないのか」を分けて考える。',next:'仕事内容・人間関係・働き方・評価の中から、一番変えたいものを1つ決めてみる。'},
-   cautious:{name:'慎重判断タイプ',image:'assets/type6.jpg',state:'簡単には決めない。失敗を避けて、納得してから動きたいタイプかもしれません。',worries:['転職を決めるには情報が足りない気がする','今より悪くなったらどうしようと考える','決断した後に後悔するのが怖い'],strengths:['先のことまで考えて判断できる','一度決めたことに責任を持とうとする','重要な選択を雑にしない'],organize:'「何がわかれば、自分は納得して決められるのか」を明確にする。',next:'転職を決めるのではなく、「あと何を知れば判断できるか」を3つに分けてみる。'}
+    patience:{
+      name:'我慢しすぎタイプ',image:'assets/type1.jpg',
+      state:'周りを優先して、自分のしんどさを後回しにしていませんか？',
+      worries:['「まだ頑張れる」と思ってしまう','周りに迷惑をかけたくなくて言い出せない','辞めるほどではないと思って我慢してしまう'],
+      strengths:['周囲への配慮ができる','責任感を持って最後までやり切れる','人の変化や状況に気づきやすい'],
+      organize:'「辞めたいかどうか」より先に、「何が一番しんどいのか」を整理する。',
+      next:'今の仕事で「もう少し変わってほしい」と思うことを1つだけ見つけてみましょう。',
+      trigger:'「まだ大丈夫」と言い続けるより、環境を変えたい気持ちがはっきりしてきたら、転職を選択肢に入れてOK。',
+      caseTitle:'「我慢する」から「選ぶ」に変えた',
+      caseText:'架空のモデルケース：周囲を優先して転職を後回しにしていた会社員が、まず「何が一番つらいか」を整理。働き方と人間関係を軸に求人を比較し、自分に合う環境へ動き出しました。',
+      timeline:[['1日目','モヤモヤを整理','一番変えたいことを1つ決める'],['7日目','譲れない条件を決める','働き方・人間関係などを3つに絞る'],['1ヶ月目','求人を比較する','「今より良くなる条件」がある求人だけを見る'],['3ヶ月目','次の環境を選ぶ','転職・残留を含め、納得できる選択をする']],
+    },
+    lost:{
+      name:'転職迷子タイプ',image:'assets/type2.jpg',
+      state:'転職したい気持ちはある。でも、どこへ進むかがまだ決まっていない状態かもしれません。',
+      worries:['求人を見るほど選べなくなる','どんな仕事が自分に合うのかわからない','条件を見比べるだけで疲れてしまう'],
+      strengths:['いろいろな可能性を考えられる','勢いだけで決めず情報を集められる','自分に合うものを納得して選びたい意識がある'],
+      organize:'「何の仕事をするか」より先に、「仕事で何を大切にしたいか」を整理する。',
+      next:'給与・働き方・人間関係・仕事内容など、仕事選びで大切にしたいことを3つに絞ってみましょう。',
+      trigger:'求人を見ても決め手が見つからず、条件を増やすほど迷うようになったら、一度「選ぶ基準」を先に決めるタイミング。',
+      caseTitle:'「求人探し」から「選ぶ基準づくり」へ',
+      caseText:'架空のモデルケース：たくさんの求人を保存して決められなかった会社員が、仕事内容・働き方・人間関係の3軸を設定。比較できるようになり、応募先を絞って転職を決めました。',
+      timeline:[['1日目','仕事選びの軸を作る','大事にしたい条件を3つに絞る'],['7日目','求人を比較する','軸に合わない求人を外していく'],['1ヶ月目','応募先を決める','「良さそう」ではなく「軸に合う」で選ぶ'],['3ヶ月目','次の一歩を決める','転職・情報収集継続のどちらかを選ぶ']],
+    },
+    stop:{
+      name:'行動ストップタイプ',image:'assets/type3.jpg',
+      state:'動きたい気持ちはある。でも、失敗するのが怖くて止まってしまっているのかもしれません。',
+      worries:['求人は見るけど応募まで進まない','考えているうちに時間だけ過ぎる','「もし合わなかったら」と不安になる'],
+      strengths:['リスクを想像して慎重に考えられる','重要な決断を雑にしない','納得できる材料を集めようとする'],
+      organize:'何が怖くて動けないのかを、「お金」「環境」「仕事内容」などに分けて具体化する。',
+      next:'「転職する」ではなく、「求人を1つ見る」「仕事内容を調べる」など小さな行動から始める。',
+      trigger:'「調べる」だけが続いて、同じ不安を何度も繰り返すようになったら、小さく行動して確かめるタイミング。',
+      caseTitle:'「応募」ではなく「小さな一歩」から',
+      caseText:'架空のモデルケース：失敗への不安から応募できなかった会社員が、まず求人を1件だけ比較。仕事内容を確認し、情報を集めるうちに不安の正体が見えるようになり、納得できる求人へ応募しました。',
+      timeline:[['1日目','不安の正体を知る','何が怖いのかを3つに分ける'],['7日目','小さく試す','求人を見る・仕事内容を調べるなど1歩だけ動く'],['1ヶ月目','比較して判断する','応募する求人を1〜3件に絞る'],['3ヶ月目','決める・続ける','転職か現職継続かを材料で判断する']],
+    },
+    self:{
+      name:'自分探しタイプ',image:'assets/type4.jpg',
+      state:'自分の強みや、向いている環境がまだ言葉になっていない状態かもしれません。',
+      worries:['「自分の強みは？」と聞かれると困る','向いている仕事がわからない','経験が強みになるのか自信がない'],
+      strengths:['人から頼られることがある','自然にできていることがある','相手の変化や困りごとに気づける可能性がある'],
+      organize:'「得意なこと」だけでなく、「人から頼られること」「当たり前にできること」を整理する。',
+      next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ見つけてみましょう。',
+      trigger:'「やりたい仕事」を探し続けても答えが出ないときは、まず「自然にできること」から転職の軸を作るタイミング。',
+      caseTitle:'「強みがない」から「強みはここかも」へ',
+      caseText:'架空のモデルケース：強みを言葉にできなかった会社員が、仕事だけでなく日常で人から頼られる場面を振り返り。対人調整が得意だと分かり、そこを活かせる職場へ方向性を決めました。',
+      timeline:[['1日目','強みのタネを探す','人から頼られることを3つ集める'],['7日目','共通点を見つける','強みになりそうな行動を言葉にする'],['1ヶ月目','仕事とつなげる','その強みが活きる求人を探す'],['3ヶ月目','合う環境を選ぶ','強みを活かせる働き方へ一歩進む']],
+    },
+    environment:{
+      name:'環境見直しタイプ',image:'assets/type5.jpg',
+      state:'仕事内容そのものより、今の職場・人間関係・評価などとの相性が気になっているのかもしれません。',
+      worries:['仕事自体は嫌いじゃない','上司や人間関係で消耗する','評価や働き方にモヤモヤする'],
+      strengths:['自分が力を発揮しやすい環境を感じ取れる','周囲との相性を見ながら動ける','働き方に対する希望がはっきりしている'],
+      organize:'「仕事が嫌なのか」「環境が合わないのか」を分けて考える。',
+      next:'仕事内容・人間関係・働き方・評価の中から、一番変えたいものを1つ決めてみる。',
+      trigger:'仕事内容は嫌いじゃないのに、環境面の不満が繰り返されるなら、環境を変える選択肢を検討するタイミング。',
+      caseTitle:'「仕事を変える」より先に「環境を変える」',
+      caseText:'架空のモデルケース：仕事内容にはやりがいを感じていた会社員が、職場環境とのミスマッチに気づき、評価制度と働き方を軸に会社を比較。仕事内容を活かせる別環境へ転職しました。',
+      timeline:[['1日目','不満を分解する','仕事内容・人間関係・働き方に分ける'],['7日目','変えたい軸を決める','一番影響の大きい環境条件を1つ決める'],['1ヶ月目','会社を比較する','仕事内容だけでなく環境条件も確認する'],['3ヶ月目','合う環境を選ぶ','仕事を続けるか、環境を変えるか決める']],
+    },
+    cautious:{
+      name:'慎重判断タイプ',image:'assets/type6.jpg',
+      state:'簡単には決めない。失敗を避けて、納得してから動きたいタイプかもしれません。',
+      worries:['転職を決めるには情報が足りない気がする','今より悪くなったらどうしようと考える','決断した後に後悔するのが怖い'],
+      strengths:['先のことまで考えて判断できる','一度決めたことに責任を持とうとする','重要な選択を雑にしない'],
+      organize:'「何がわかれば、自分は納得して決められるのか」を明確にする。',
+      next:'転職を決めるのではなく、「あと何を知れば判断できるか」を3つに分けてみる。',
+      trigger:'情報を集めること自体が目的になり始めたら、「これが分かったら決める」という判断ラインを作るタイミング。',
+      caseTitle:'「全部分かってから」ではなく「判断できる材料が揃ったら」',
+      caseText:'架空のモデルケース：慎重に情報を集め続けていた会社員が、「年収・働き方・仕事内容」の3条件を判断材料に設定。必要な情報が揃った段階で迷いを区切り、転職を決めました。',
+      timeline:[['1日目','判断材料を決める','何が分かれば決められるか3つにする'],['7日目','情報を集める','必要な情報だけを集める'],['1ヶ月目','候補を比較する','判断材料で候補を並べる'],['3ヶ月目','判断する','情報が揃ったら、転職・残留を決める']],
+    }
   }[key];
+
   const worryList=results.worries.map(v=>`<li>${v}</li>`).join('');
   const strengthList=results.strengths.map(v=>`<li>${v}</li>`).join('');
-  body.style.display='none';controls.style.display='none';
+  const timelineHtml=results.timeline.map(v=>`<div class="timeline-item"><span class="time">${v[0]}</span><strong>${v[1]}</strong><p>${v[2]}</p><div class="goal">次の状態：${v[1]}ができている</div></div>`).join('');
+
+  body.style.display='none';
+  controls.style.display='none';
   resultPanel.innerHTML=`
-   <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
-   <span class="result-badge">あなたの診断結果</span>
-   <h2>${results.name}</h2>
-   <div class="result-sections">
-     <div class="result-box"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
-     <div class="result-box"><h4>③ よくある悩み</h4><ul>${worryList}</ul></div>
-     <div class="result-box result-strength"><h4>④ 隠れた強み</h4><ul>${strengthList}</ul></div>
-     <div class="result-box"><h4>⑤ 今整理すべきこと</h4><p>${results.organize}</p></div>
-     <div class="result-box result-next"><h4>⑥ 次の一歩</h4><p>${results.next}</p></div>
+   <div class="result-head">
+     <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
+     <span class="result-badge">あなたの診断結果</span>
+     <h2>${results.name}</h2>
+     <div class="result-kicker">今の状態を整理して、次の一歩を考えてみましょう。</div>
    </div>
-   <div class="reward-ladder">
-     <h4>診断の途中・その後でも、ちゃんと「もらえる」設計</h4>
-     <div class="reward-ladder-grid">
-       <div class="reward-step"><b>診断完了</b><span>タイプ別の「次の一歩」をその場でチェック</span></div>
-       <div class="reward-step"><b>LINE追加</b><span>診断結果を深掘りする3つの質問を受け取る</span></div>
-       <div class="reward-step"><b>無料相談</b><span>面談後に「次の一歩3択シート」で整理する</span></div>
+
+   <section class="insight-card">
+     <div class="insight-card-title">あなたの今を3つに整理すると</div>
+     <div class="insight-grid">
+       <div class="insight-item"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
+       <div class="insight-item"><h4>③ よくある悩み</h4><ul>${worryList}</ul></div>
+       <div class="insight-item"><h4>④ 隠れた強み</h4><ul>${strengthList}</ul></div>
      </div>
-   </div>
+   </section>
+
+   <section class="result-trigger">
+     <span class="trigger-label">転職を考えるきっかけ</span>
+     <h3>いつ転職を考える？</h3>
+     <p>${results.trigger}</p>
+   </section>
+
+   <section class="case-section">
+     <h3>あなたと同じタイプは、こうやって転職を決めました</h3>
+     <p class="case-sub">※実在する個人の体験談ではなく、このタイプをイメージした架空のモデルケースです。</p>
+     <div class="case-card">
+       <div class="case-visual"><img src="${results.image}" alt="${results.name}のモデルケースイメージ"><div class="case-overlay"><span class="case-label">同タイプのモデルケース</span><strong>${results.caseTitle}</strong></div></div>
+       <div class="case-body"><p>${results.caseText}</p></div>
+     </div>
+   </section>
+
+   <section class="timeline-section">
+     <h3>理想の転職スタイル｜モデルケースの進み方</h3>
+     <div class="timeline">${timelineHtml}</div>
+   </section>
+
+   <section class="next-step-card">
+     <h3>⑤⑥ 今のあなたがやること</h3>
+     <div class="next-grid">
+       <div><b>⑤ 今整理すべきこと</b><p>${results.organize}</p></div>
+       <div><b>⑥ 次の一歩</b><p>${results.next}</p></div>
+     </div>
+   </section>
+
    <div class="result-actions"><a class="line-btn" href="${LINE_URL}" target="_blank" rel="noopener">⑦ 診断結果を基に無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
    <p class="result-note">この診断は、今の仕事やキャリアについて整理するための簡易チェックです。転職や就職を一律に勧めるものではありません。</p>`;
   resultPanel.classList.add('is-visible');
   document.getElementById('retryBtn').addEventListener('click',openQuiz);
 }
+
 </script>
 </body>
 </html>
