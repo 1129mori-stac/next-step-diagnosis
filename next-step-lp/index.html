@@ -446,6 +446,26 @@ html,body{overflow-x:hidden}
   background:#fff;
 }
 
+
+/* v14: desktop quiz fit-to-viewport + uncropped result images */
+@media (min-width:641px){
+  /* Keep the entire question image visible while making the whole question tappable without scrolling. */
+  .modal{padding:10px}
+  .quiz{max-height:92vh;overflow:hidden}
+  .quiz-body{padding-top:6px;padding-bottom:12px;overflow:hidden}
+  .quiz-question-layout{gap:10px}
+  .question-title{margin:0 0 6px!important;line-height:1.38!important}
+  .question-visual{width:100%!important;height:min(24vh,220px)!important;max-height:220px!important;aspect-ratio:auto!important;overflow:hidden!important;margin:0 auto!important}
+  .question-visual img{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important;object-position:center!important;display:block!important}
+  .answers{gap:8px!important}
+  .answer{min-height:52px!important;padding:9px 6px!important}
+  .answer strong{font-size:14px!important;line-height:1.25!important}
+
+  /* Show the complete result character image inside a predictable desktop frame. */
+  .result-summary-card .result-character{width:100%!important;height:min(42vh,420px)!important;max-height:420px!important;aspect-ratio:auto!important;overflow:hidden!important;margin:0 auto 15px!important}
+  .result-summary-card .result-character img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
+  .model-case-image{width:100%!important;height:auto!important;max-height:420px!important;object-fit:contain!important;object-position:center!important}
+}
 </style>
 </head>
 <body>
