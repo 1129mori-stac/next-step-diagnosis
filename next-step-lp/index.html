@@ -398,6 +398,28 @@ html,body{overflow-x:hidden}
   .answer{min-height:48px}
 }
 
+
+/* v12: show full question images + make result insight card much more concise */
+.question-visual{height:auto!important;aspect-ratio:auto!important;max-height:none!important;overflow:hidden;border-radius:16px}
+.question-visual img{width:100%!important;height:auto!important;max-height:none!important;display:block;object-fit:contain!important;object-position:center}
+.result-insight-card{padding:16px!important}
+.result-insight-title{font-size:16px!important;margin:0 0 9px!important}
+.result-insight-block{padding:9px 0!important;border-top:1px solid #e0edf2}
+.result-insight-block:first-of-type{border-top:0;padding-top:0!important}
+.result-insight-block h4{display:inline;font-size:12px!important;margin:0 4px 0 0!important;color:#16435b}
+.result-insight-block p{display:inline;margin:0!important;color:#617783;line-height:1.65!important;font-size:12px!important;font-weight:700!important}
+.result-insight-block ul{display:inline;margin:0!important;padding:0!important;list-style:none!important;color:#617783;line-height:1.65!important;font-size:12px!important;font-weight:700!important}
+.result-insight-block li{display:inline}
+.result-insight-block li:not(:last-child)::after{content:' ・ ';color:#9bb0b9}
+.result-insight-block.strength{margin-top:6px!important;padding:10px 11px!important;border:1px solid #f0e5a8!important;border-radius:12px!important;background:linear-gradient(180deg,#fffef0 0%,#fff 100%)!important}
+.result-insight-block.strength h4{color:#6f5b08}
+@media (min-width:641px){
+  .question-visual{max-width:760px;margin:0 auto}
+}
+@media (max-width:640px){
+  .question-visual{width:100%!important;border-radius:14px!important}
+}
+
 </style>
 </head>
 <body>
@@ -754,17 +776,17 @@ function showResult(){
         <p class="result-lead">今の状態を責めるための診断ではありません。<br>「次の一歩」を考えるためのヒントとして受け取ってください。</p>
       </div>
       <section class="result-card result-insight-card">
-        <h3 class="result-insight-title">今のあなたについて</h3>
+        <h3 class="result-insight-title">あなたの今を整理すると</h3>
         <div class="result-insight-block">
-          <h4>こんな状態かもしれません</h4>
+          <h4>今の状態</h4>
           <p>${results.state}</p>
         </div>
         <div class="result-insight-block">
-          <h4>よくある悩み</h4>
+          <h4>気になりやすいこと</h4>
           <ul>${worries}</ul>
         </div>
         <div class="result-insight-block strength">
-          <h4>あなたの隠れた強み</h4>
+          <h4>あなたの強み</h4>
           <ul>${strengths}</ul>
         </div>
       </section>
