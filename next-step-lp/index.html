@@ -177,63 +177,59 @@ img{max-width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-/* ===== Result v7: compact card + model case + timeline ===== */
-.result{padding:10px 24px 34px;display:none}
+/* =========================
+   Result page v8: compact card + model case + timeline + CTA
+========================= */
+.result{padding:12px 24px 34px;display:none}
 .result.is-visible{display:block}
-.result-head{text-align:center;margin:2px 0 18px}
-.result-character{width:min(100%,520px);aspect-ratio:16/9;margin:0 auto 14px;overflow:hidden;border-radius:22px;background:#edf8ff;border:1px solid #d9edf5;box-shadow:0 12px 32px rgba(22,76,98,.08)}
+.result-top{text-align:center;margin-bottom:14px}
+.result-character{width:min(100%,760px);aspect-ratio:16/8;overflow:hidden;border-radius:22px;background:#edf8ff;margin:0 auto 15px;box-shadow:0 14px 32px rgba(26,85,111,.08)}
 .result-character img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
-.result-badge{display:inline-flex;padding:7px 11px;border-radius:999px;background:#e8f7ff;color:#13789d;font-weight:1000;font-size:12px}
-.result h2{font-size:clamp(30px,5vw,44px);line-height:1.12;margin:10px 0 8px;font-weight:1000}
-.result-kicker{font-size:13px;color:#6a808a;font-weight:800}
-.insight-card{background:linear-gradient(180deg,#ffffff 0%,#f7fcff 100%);border:1px solid #d9edf5;border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 14px 34px rgba(18,76,101,.07)}
-.insight-card-title{font-size:13px;letter-spacing:.06em;color:#178eb9;font-weight:1000;margin-bottom:10px}
-.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.insight-item{padding:4px 18px 6px;border-right:1px solid var(--line)}
-.insight-item:first-child{padding-left:4px}.insight-item:last-child{border-right:0;padding-right:4px}
-.insight-item h4{margin:0 0 7px;font-size:14px;color:#163f58}
-.insight-item p{margin:0;color:#5f7782;font-size:12px;line-height:1.7;font-weight:700}
-.insight-item ul{margin:0;padding-left:17px;color:#5f7782;font-size:12px;line-height:1.7;font-weight:700}
-.result-trigger{margin-top:14px;background:#fff8dc;border:1px solid #f1df96;border-radius:18px;padding:16px 17px}
-.result-trigger h3,.case-section h3,.timeline-section h3,.next-step-card h3{margin:0 0 8px;font-size:15px;color:#244a5f}
-.result-trigger p{margin:0;color:#5f6f77;font-size:13px;line-height:1.7;font-weight:800}
-.trigger-label{display:inline-block;margin-bottom:7px;padding:5px 9px;border-radius:999px;background:#ffe66b;color:#6f5a00;font-size:11px;font-weight:1000}
-.case-section{margin-top:16px}
-.case-sub{margin:0 0 11px;color:#768891;font-size:11px;line-height:1.55;font-weight:750}
-.case-card{border:1px solid #dcecf3;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 28px rgba(18,76,101,.06)}
-.case-visual{position:relative;aspect-ratio:16/7;overflow:hidden;background:#dfeff6}
-.case-visual img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.95)}
-.case-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,51,75,.02),rgba(11,51,75,.62))}
-.case-overlay{position:absolute;left:15px;right:15px;bottom:13px;z-index:2;color:#fff}
-.case-overlay .case-label{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(16,55,75,.74);font-size:10px;font-weight:1000}
-.case-overlay strong{display:block;margin-top:5px;font-size:16px}
-.case-body{padding:15px 16px 17px}
-.case-body p{margin:0;color:#5f7782;font-size:12px;line-height:1.75;font-weight:700}
-.timeline-section{margin-top:18px}
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:11px}
-.timeline-item{position:relative;background:#f7fcff;border:1px solid #dcecf3;border-radius:16px;padding:13px 11px 12px;min-height:145px}
-.timeline-item .time{display:inline-flex;padding:5px 8px;border-radius:999px;background:#e7f6ff;color:#187ea3;font-size:10px;font-weight:1000}
-.timeline-item strong{display:block;margin:8px 0 5px;color:#173f58;font-size:12px}
-.timeline-item p{margin:0;color:#677d86;font-size:11px;line-height:1.6;font-weight:700}
-.timeline-item .goal{margin-top:7px;padding-top:7px;border-top:1px dashed #cfe4ec;color:#1687ad;font-size:10px;font-weight:900}
-.next-step-card{margin-top:16px;border-radius:19px;padding:16px 17px;background:linear-gradient(180deg,#effaff 0%,#fff 100%);border:1px solid #d8edf6}
-.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.next-grid>div{background:#fff;border:1px solid #e2eef3;border-radius:13px;padding:11px 12px}
-.next-grid b{display:block;font-size:11px;color:#178eb9;margin-bottom:5px}.next-grid p{margin:0;color:#607783;font-size:11px;line-height:1.6;font-weight:750}
-.result-actions{display:grid;gap:9px;margin-top:17px}.line-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:#fff;border-radius:15px;padding:15px;font-weight:1000;box-shadow:0 12px 24px rgba(18,184,120,.18)}
-.retry-btn{border:0;background:#eef5f8;color:var(--ink);border-radius:15px;padding:13px;font-weight:1000;cursor:pointer}
-.result-note{margin:11px 0 0;color:#8a9aa1;font-size:10px;line-height:1.6;text-align:center}
-@media(max-width:640px){
-  .result{padding:8px 14px 24px}
+.result-badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:#e8f7ff;color:#13789d;font-weight:1000;font-size:12px}
+.result h2{font-size:clamp(32px,5vw,48px);line-height:1.15;margin:10px 0 8px;letter-spacing:-.04em}
+.result-lead{margin:0 0 16px;color:var(--muted);line-height:1.75;font-weight:750;font-size:14px}
+.result-card{background:linear-gradient(180deg,#f8fcff 0%,#fff 100%);border:1px solid #d9edf5;border-radius:22px;padding:18px;box-shadow:0 12px 28px rgba(26,85,111,.05)}
+.result-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.result-mini{background:#fff;border:1px solid #e0edf2;border-radius:16px;padding:14px}
+.result-mini h4{margin:0 0 8px;font-size:13px;color:#16435b}
+.result-mini p{margin:0;color:#617783;line-height:1.7;font-weight:700;font-size:12px}
+.result-mini.strength{background:linear-gradient(180deg,#fffef0 0%,#fff 100%);border-color:#f4e7a6}
+.result-mini.strength h4{color:#6f5b08}
+.result-subtitle{display:flex;align-items:center;gap:10px;margin:24px 0 12px;font-size:19px;font-weight:1000;letter-spacing:-.02em}
+.result-subtitle::before{content:"";width:5px;height:24px;border-radius:999px;background:var(--yellow)}
+.result-trigger{background:#fffaf0;border:1px solid #f4e5a8;border-radius:18px;padding:16px 18px}
+.result-trigger strong{display:block;font-size:15px;color:#8a6900;margin-bottom:6px}
+.result-trigger p{margin:0;color:#5f6f78;line-height:1.7;font-size:13px;font-weight:750}
+.model-case{border-radius:22px;overflow:hidden;border:1px solid #e1edf1;background:#fff;box-shadow:0 14px 30px rgba(26,85,111,.06)}
+.model-case-image{width:100%;aspect-ratio:4/3;display:block;object-fit:cover}
+.model-case-body{padding:16px 17px 18px}
+.model-case-kicker{display:inline-flex;align-items:center;padding:6px 9px;border-radius:999px;background:#eef9ff;color:#1d86ad;font-size:11px;font-weight:1000}
+.model-case h4{margin:9px 0 6px;font-size:18px;line-height:1.45}
+.model-case p{margin:0;color:#617783;line-height:1.75;font-size:13px;font-weight:700}
+.timeline{display:grid;gap:10px;margin-top:10px}
+.timeline-item{display:grid;grid-template-columns:88px 1fr;gap:12px;align-items:stretch}
+.timeline-day{position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:13px}
+.timeline-day span{display:inline-flex;align-items:center;justify-content:center;min-width:72px;padding:7px 9px;border-radius:999px;background:#eef8fd;color:#1380aa;font-size:11px;font-weight:1000;border:1px solid #d7ecf5}
+.timeline-item:not(:last-child) .timeline-day::after{content:"";position:absolute;top:50px;bottom:-10px;width:2px;background:#dcecf3}
+.timeline-card{background:#fff;border:1px solid #e0edf2;border-radius:16px;padding:14px 15px}
+.timeline-card strong{display:block;font-size:14px;margin-bottom:5px;color:#17455d}
+.timeline-card p{margin:0;color:#637a84;font-size:12px;line-height:1.7;font-weight:700}
+.result-next-card{margin-top:18px;background:linear-gradient(180deg,#effaff 0%,#fff 100%);border:1px solid #d8edf7;border-radius:20px;padding:17px}
+.result-next-card h4{margin:0 0 7px;color:#16435b;font-size:14px}
+.result-next-card p{margin:0;color:#617783;line-height:1.75;font-size:13px;font-weight:750}
+.result-actions{display:grid;gap:9px;margin-top:18px}.line-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:#fff;border-radius:15px;padding:16px;font-weight:1000;box-shadow:0 12px 24px rgba(18,184,120,.18)}.retry-btn{border:0;background:#eef5f8;color:var(--ink);border-radius:15px;padding:13px;font-weight:1000;cursor:pointer}.result-note{margin:12px 0 0;color:#8a9aa1;font-size:11px;line-height:1.6;text-align:center}
+@media (max-width:640px){
+  .result{padding:8px 14px 26px}
   .result-character{aspect-ratio:4/3;border-radius:18px}
-  .insight-card{padding:14px;border-radius:18px}
-  .insight-grid{grid-template-columns:1fr;gap:0}
-  .insight-item,.insight-item:first-child,.insight-item:last-child{padding:10px 0;border-right:0;border-bottom:1px solid var(--line)}
-  .insight-item:last-child{border-bottom:0}
-  .timeline{grid-template-columns:1fr 1fr}
-  .timeline-item{min-height:132px}
-  .next-grid{grid-template-columns:1fr}
-  .case-visual{aspect-ratio:16/9}
+  .result-card{padding:12px;border-radius:18px}
+  .result-card-grid{grid-template-columns:1fr;gap:8px}
+  .result-mini{padding:13px}
+  .result-subtitle{font-size:18px;margin-top:22px}
+  .timeline-item{grid-template-columns:70px 1fr;gap:9px}
+  .timeline-day span{min-width:62px;padding:6px 6px;font-size:10px}
+  .timeline-item:not(:last-child) .timeline-day::after{top:45px}
+  .model-case-body{padding:14px}
+  .model-case-image{aspect-ratio:4/3}
 }
 
 </style>
@@ -504,136 +500,158 @@ function showResult(){
   const key=priority.find(k=>score[k]===max)||'lost';
   const results={
     patience:{
-      name:'我慢しすぎタイプ',image:'assets/type1.jpg',
+      name:'我慢しすぎタイプ',image:'assets/type1.jpg',modelImage:'assets/model1.jpg',
       state:'周りを優先して、自分のしんどさを後回しにしていませんか？',
       worries:['「まだ頑張れる」と思ってしまう','周りに迷惑をかけたくなくて言い出せない','辞めるほどではないと思って我慢してしまう'],
       strengths:['周囲への配慮ができる','責任感を持って最後までやり切れる','人の変化や状況に気づきやすい'],
       organize:'「辞めたいかどうか」より先に、「何が一番しんどいのか」を整理する。',
       next:'今の仕事で「もう少し変わってほしい」と思うことを1つだけ見つけてみましょう。',
-      trigger:'「まだ大丈夫」と言い続けるより、環境を変えたい気持ちがはっきりしてきたら、転職を選択肢に入れてOK。',
-      caseTitle:'「我慢する」から「選ぶ」に変えた',
-      caseText:'架空のモデルケース：周囲を優先して転職を後回しにしていた会社員が、まず「何が一番つらいか」を整理。働き方と人間関係を軸に求人を比較し、自分に合う環境へ動き出しました。',
-      timeline:[['1日目','モヤモヤを整理','一番変えたいことを1つ決める'],['7日目','譲れない条件を決める','働き方・人間関係などを3つに絞る'],['1ヶ月目','求人を比較する','「今より良くなる条件」がある求人だけを見る'],['3ヶ月目','次の環境を選ぶ','転職・残留を含め、納得できる選択をする']],
+      trigger:'「まだ大丈夫」と言い続けるより、我慢が当たり前になってきたと感じたら、転職を選択肢に入れるタイミングです。',
+      modelTitle:'我慢を続ける働き方から、無理をしなくていい環境へ',
+      modelText:'最初は「辞めるほどではない」と思っていたAさん。1日目に不満を3つに分け、7日目に「変えたい条件」を整理。1か月目には3社を比較し、仕事内容よりも人間関係と働き方を重視。3か月目、条件に納得できる会社へ転職を決めました。',
+      timeline:[
+        ['1日目','まずは「仕事内容・人間関係・働き方」の3つに分けて、いちばん苦しいポイントを特定。','何を変えればラクになるかが見える。'],
+        ['7日目','今の会社で変えられること／変えにくいことを整理し、転職先に求める条件を3つに絞る。','「辞めたい」だけだった気持ちが「こういう環境なら働きたい」に変わる。'],
+        ['1ヶ月目','条件に合う求人を3〜5社比較し、応募先を決める。面接では「人間関係・働き方」も確認。','我慢から逃げる転職ではなく、自分を守る転職になる。'],
+        ['3ヶ月目','内定条件を比較し、納得できる会社を選択。退職・引き継ぎを進める。','「もっと早く動けばよかった」と思えるくらい、環境が変わる。']
+      ]
     },
     lost:{
-      name:'転職迷子タイプ',image:'assets/type2.jpg',
+      name:'転職迷子タイプ',image:'assets/type2.jpg',modelImage:'assets/model2.jpg',
       state:'転職したい気持ちはある。でも、どこへ進むかがまだ決まっていない状態かもしれません。',
       worries:['求人を見るほど選べなくなる','どんな仕事が自分に合うのかわからない','条件を見比べるだけで疲れてしまう'],
       strengths:['いろいろな可能性を考えられる','勢いだけで決めず情報を集められる','自分に合うものを納得して選びたい意識がある'],
       organize:'「何の仕事をするか」より先に、「仕事で何を大切にしたいか」を整理する。',
       next:'給与・働き方・人間関係・仕事内容など、仕事選びで大切にしたいことを3つに絞ってみましょう。',
-      trigger:'求人を見ても決め手が見つからず、条件を増やすほど迷うようになったら、一度「選ぶ基準」を先に決めるタイミング。',
-      caseTitle:'「求人探し」から「選ぶ基準づくり」へ',
-      caseText:'架空のモデルケース：たくさんの求人を保存して決められなかった会社員が、仕事内容・働き方・人間関係の3軸を設定。比較できるようになり、応募先を絞って転職を決めました。',
-      timeline:[['1日目','仕事選びの軸を作る','大事にしたい条件を3つに絞る'],['7日目','求人を比較する','軸に合わない求人を外していく'],['1ヶ月目','応募先を決める','「良さそう」ではなく「軸に合う」で選ぶ'],['3ヶ月目','次の一歩を決める','転職・情報収集継続のどちらかを選ぶ']],
+      trigger:'3つの仕事選びの軸が決まり、「この条件なら探せる」と思えるようになったら、転職活動を本格化するタイミングです。',
+      modelTitle:'「何がいいかわからない」から、選べる自分へ',
+      modelText:'Bさんは求人を見るたびに迷っていました。1日目に条件を「絶対ほしい・できればほしい・なくてもいい」に整理。7日目に5社を比較し、1か月目には3社へ応募。3か月目、軸に一番合う会社の内定を選びました。',
+      timeline:[
+        ['1日目','給与・仕事内容・働き方・人間関係から「絶対に譲れない3つ」を決める。','求人を見るたびに迷う状態から抜け出す。'],
+        ['7日目','気になる求人を5社並べ、3つの軸で○△×をつけて比較する。','「なんとなく良さそう」ではなく、選ぶ理由が言葉になる。'],
+        ['1ヶ月目','上位3社に応募し、面接で気になる点を直接確認する。','条件だけでなく、実際の仕事内容まで比較できる。'],
+        ['3ヶ月目','内定条件と自分の軸を照らし合わせ、納得できる1社を決める。','「たまたま入った会社」ではなく「選んだ会社」に進める。']
+      ]
     },
     stop:{
-      name:'行動ストップタイプ',image:'assets/type3.jpg',
+      name:'行動ストップタイプ',image:'assets/type3.jpg',modelImage:'assets/model3.jpg',
       state:'動きたい気持ちはある。でも、失敗するのが怖くて止まってしまっているのかもしれません。',
       worries:['求人は見るけど応募まで進まない','考えているうちに時間だけ過ぎる','「もし合わなかったら」と不安になる'],
       strengths:['リスクを想像して慎重に考えられる','重要な決断を雑にしない','納得できる材料を集めようとする'],
       organize:'何が怖くて動けないのかを、「お金」「環境」「仕事内容」などに分けて具体化する。',
       next:'「転職する」ではなく、「求人を1つ見る」「仕事内容を調べる」など小さな行動から始める。',
-      trigger:'「調べる」だけが続いて、同じ不安を何度も繰り返すようになったら、小さく行動して確かめるタイミング。',
-      caseTitle:'「応募」ではなく「小さな一歩」から',
-      caseText:'架空のモデルケース：失敗への不安から応募できなかった会社員が、まず求人を1件だけ比較。仕事内容を確認し、情報を集めるうちに不安の正体が見えるようになり、納得できる求人へ応募しました。',
-      timeline:[['1日目','不安の正体を知る','何が怖いのかを3つに分ける'],['7日目','小さく試す','求人を見る・仕事内容を調べるなど1歩だけ動く'],['1ヶ月目','比較して判断する','応募する求人を1〜3件に絞る'],['3ヶ月目','決める・続ける','転職か現職継続かを材料で判断する']],
+      trigger:'「転職する」ではなく、まず求人を見る・話を聞くなどの小さな行動ならできそうと思えたら、動き始めるタイミングです。',
+      modelTitle:'怖さをなくすのではなく、小さく動いて不安を減らす',
+      modelText:'Cさんは転職したいのに応募できずにいました。1日目は不安の正体を3つに分解。7日目に1社だけ話を聞き、1か月目に初応募。面接を重ねるうちに不安が具体的な判断材料へ変わり、3か月目に転職を決めました。',
+      timeline:[
+        ['1日目','「失敗が怖い」を、お金・仕事内容・人間関係・通勤など具体的な不安に分ける。','ぼんやりした怖さが、確認できる項目になる。'],
+        ['7日目','気になる求人を1件だけ詳しく調べ、可能なら会社説明やカジュアルな情報収集をする。','「考える」から「知る」に変わる。'],
+        ['1ヶ月目','不安を確認するために、まず1〜2社へ応募。面接で情報を増やす。','応募＝転職確定ではないと分かり、行動しやすくなる。'],
+        ['3ヶ月目','集めた情報と実際の選考結果をもとに、転職するか判断する。','不安だけで止まらず、自分で決められる状態になる。']
+      ]
     },
     self:{
-      name:'自分探しタイプ',image:'assets/type4.jpg',
+      name:'自分探しタイプ',image:'assets/type4.jpg',modelImage:'assets/model4.jpg',
       state:'自分の強みや、向いている環境がまだ言葉になっていない状態かもしれません。',
       worries:['「自分の強みは？」と聞かれると困る','向いている仕事がわからない','経験が強みになるのか自信がない'],
       strengths:['人から頼られることがある','自然にできていることがある','相手の変化や困りごとに気づける可能性がある'],
       organize:'「得意なこと」だけでなく、「人から頼られること」「当たり前にできること」を整理する。',
-      next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ見つけてみましょう。',
-      trigger:'「やりたい仕事」を探し続けても答えが出ないときは、まず「自然にできること」から転職の軸を作るタイミング。',
-      caseTitle:'「強みがない」から「強みはここかも」へ',
-      caseText:'架空のモデルケース：強みを言葉にできなかった会社員が、仕事だけでなく日常で人から頼られる場面を振り返り。対人調整が得意だと分かり、そこを活かせる職場へ方向性を決めました。',
-      timeline:[['1日目','強みのタネを探す','人から頼られることを3つ集める'],['7日目','共通点を見つける','強みになりそうな行動を言葉にする'],['1ヶ月目','仕事とつなげる','その強みが活きる求人を探す'],['3ヶ月目','合う環境を選ぶ','強みを活かせる働き方へ一歩進む']],
+      next:'仕事だけでなく、プライベートも含めて「人からよく頼られること」を3つ挙げてみる。',
+      trigger:'自分の強みと、活かせそうな求人が1本の線でつながってきたら、転職を前向きに考えるタイミングです。',
+      modelTitle:'「強みがない」から、「これなら活かせる」へ',
+      modelText:'Dさんは自分の強みが分かりませんでした。1日目に過去に頼られたことを整理。7日目にそれを仕事のスキルに言い換え、1か月目に強みを活かせる職種へ応募。3か月目、面接で評価される経験と出会い、転職を決めました。',
+      timeline:[
+        ['1日目','仕事とプライベートの両方から「人に頼られたこと」を3つ集める。','自分では普通だと思っていた行動が、強みの候補になる。'],
+        ['7日目','3つの経験を「何をしたか・どう工夫したか・何が喜ばれたか」に分解する。','強みが、職務経歴書で使える言葉になる。'],
+        ['1ヶ月目','強みが活かせそうな求人を3〜5社見て、仕事内容との相性を確認する。','「向いてるかも」と思える選択肢が具体的になる。'],
+        ['3ヶ月目','面接で強みを伝え、評価してくれる会社を選ぶ。','自分の経験を「価値」として認めてもらえる環境へ進む。']
+      ]
     },
     environment:{
-      name:'環境見直しタイプ',image:'assets/type5.jpg',
+      name:'環境見直しタイプ',image:'assets/type5.jpg',modelImage:'assets/model5.jpg',
       state:'仕事内容そのものより、今の職場・人間関係・評価などとの相性が気になっているのかもしれません。',
       worries:['仕事自体は嫌いじゃない','上司や人間関係で消耗する','評価や働き方にモヤモヤする'],
       strengths:['自分が力を発揮しやすい環境を感じ取れる','周囲との相性を見ながら動ける','働き方に対する希望がはっきりしている'],
       organize:'「仕事が嫌なのか」「環境が合わないのか」を分けて考える。',
       next:'仕事内容・人間関係・働き方・評価の中から、一番変えたいものを1つ決めてみる。',
-      trigger:'仕事内容は嫌いじゃないのに、環境面の不満が繰り返されるなら、環境を変える選択肢を検討するタイミング。',
-      caseTitle:'「仕事を変える」より先に「環境を変える」',
-      caseText:'架空のモデルケース：仕事内容にはやりがいを感じていた会社員が、職場環境とのミスマッチに気づき、評価制度と働き方を軸に会社を比較。仕事内容を活かせる別環境へ転職しました。',
-      timeline:[['1日目','不満を分解する','仕事内容・人間関係・働き方に分ける'],['7日目','変えたい軸を決める','一番影響の大きい環境条件を1つ決める'],['1ヶ月目','会社を比較する','仕事内容だけでなく環境条件も確認する'],['3ヶ月目','合う環境を選ぶ','仕事を続けるか、環境を変えるか決める']],
+      trigger:'「仕事内容は好き。でも環境が合わない」とはっきりしたら、職場を変える転職を考えるタイミングです。',
+      modelTitle:'仕事は好き。だからこそ、環境を変える',
+      modelText:'Eさんは仕事自体は好きでしたが、働き方が合っていませんでした。1日目に仕事内容と環境を切り分け、7日目に「譲れない働き方」を整理。1か月目に条件の合う企業へ応募し、3か月目に働き方が合う会社へ転職しました。',
+      timeline:[
+        ['1日目','仕事内容・人間関係・評価・働き方を分け、「どこが原因か」を整理する。','変えるべきものが明確になる。'],
+        ['7日目','転職先で「これだけは譲れない」環境条件を3つ決める。','会社名ではなく、環境の条件で求人を探せる。'],
+        ['1ヶ月目','条件に合う企業を比較し、職場の雰囲気や評価制度まで確認して応募。','同じ仕事内容でも、環境の違いが見える。'],
+        ['3ヶ月目','仕事内容と環境の両方に納得できる企業を選ぶ。','「仕事は好きなのにしんどい」を減らせる。']
+      ]
     },
     cautious:{
-      name:'慎重判断タイプ',image:'assets/type6.jpg',
+      name:'慎重判断タイプ',image:'assets/type6.jpg',modelImage:'assets/model6.jpg',
       state:'簡単には決めない。失敗を避けて、納得してから動きたいタイプかもしれません。',
       worries:['転職を決めるには情報が足りない気がする','今より悪くなったらどうしようと考える','決断した後に後悔するのが怖い'],
       strengths:['先のことまで考えて判断できる','一度決めたことに責任を持とうとする','重要な選択を雑にしない'],
       organize:'「何がわかれば、自分は納得して決められるのか」を明確にする。',
       next:'転職を決めるのではなく、「あと何を知れば判断できるか」を3つに分けてみる。',
-      trigger:'情報を集めること自体が目的になり始めたら、「これが分かったら決める」という判断ラインを作るタイミング。',
-      caseTitle:'「全部分かってから」ではなく「判断できる材料が揃ったら」',
-      caseText:'架空のモデルケース：慎重に情報を集め続けていた会社員が、「年収・働き方・仕事内容」の3条件を判断材料に設定。必要な情報が揃った段階で迷いを区切り、転職を決めました。',
-      timeline:[['1日目','判断材料を決める','何が分かれば決められるか3つにする'],['7日目','情報を集める','必要な情報だけを集める'],['1ヶ月目','候補を比較する','判断材料で候補を並べる'],['3ヶ月目','判断する','情報が揃ったら、転職・残留を決める']],
+      trigger:'「あとこれを確認すれば決められる」が明確になったら、転職を判断するタイミングです。',
+      modelTitle:'慎重に調べたからこそ、納得して決める',
+      modelText:'Fさんは決断前に情報を集めるタイプでした。1日目に確認したい項目を整理。7日目に企業比較を行い、1か月目に選考へ。3か月目、条件・仕事内容・将来性を確認し、「ここなら納得できる」と思える会社への転職を決めました。',
+      timeline:[
+        ['1日目','「あと何が分かれば決められる？」を3〜5項目にする。','情報集めが目的ではなく、判断のための情報になる。'],
+        ['7日目','求人票だけで分からない部分を企業情報・面談・選考で確認する。','漠然とした不安が、具体的な比較材料になる。'],
+        ['1ヶ月目','「絶対条件・できれば条件・気にしない条件」に分けて応募先を絞る。','情報を集めるだけでなく、選ぶ段階に進める。'],
+        ['3ヶ月目','条件を総合比較し、納得できる会社への転職を決める。','慎重さを「迷い」ではなく「納得できる選択」に変えられる。']
+      ]
     }
   }[key];
 
-  const worryList=results.worries.map(v=>`<li>${v}</li>`).join('');
-  const strengthList=results.strengths.map(v=>`<li>${v}</li>`).join('');
-  const timelineHtml=results.timeline.map(v=>`<div class="timeline-item"><span class="time">${v[0]}</span><strong>${v[1]}</strong><p>${v[2]}</p><div class="goal">次の状態：${v[1]}ができている</div></div>`).join('');
+  const worries=results.worries.map(v=>`<li>${v}</li>`).join('');
+  const strengths=results.strengths.map(v=>`<li>${v}</li>`).join('');
+  const timeline=results.timeline.map(([day,title,desc])=>`
+    <div class="timeline-item"><div class="timeline-day"><span>${day}</span></div><div class="timeline-card"><strong>${title}</strong><p>${desc}</p></div></div>
+  `).join('');
 
-  body.style.display='none';
-  controls.style.display='none';
+  body.style.display='none';controls.style.display='none';
   resultPanel.innerHTML=`
-   <div class="result-head">
-     <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
-     <span class="result-badge">あなたの診断結果</span>
-     <h2>${results.name}</h2>
-     <div class="result-kicker">今の状態を整理して、次の一歩を考えてみましょう。</div>
-   </div>
+    <div class="result-top">
+      <div class="result-character"><img src="${results.image}" alt="${results.name}のキャラクター"></div>
+      <span class="result-badge">あなたの診断結果</span>
+      <h2>${results.name}</h2>
+      <p class="result-lead">今の状態を責めるための診断ではありません。<br>「次の一歩」を考えるためのヒントとして受け取ってください。</p>
+    </div>
 
-   <section class="insight-card">
-     <div class="insight-card-title">あなたの今を3つに整理すると</div>
-     <div class="insight-grid">
-       <div class="insight-item"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
-       <div class="insight-item"><h4>③ よくある悩み</h4><ul>${worryList}</ul></div>
-       <div class="insight-item"><h4>④ 隠れた強み</h4><ul>${strengthList}</ul></div>
-     </div>
-   </section>
+    <section class="result-card">
+      <div class="result-card-grid">
+        <div class="result-mini"><h4>② あなたはこんな状態かも</h4><p>${results.state}</p></div>
+        <div class="result-mini"><h4>③ よくある悩み</h4><ul>${worries}</ul></div>
+        <div class="result-mini strength"><h4>④ 隠れた強み</h4><ul>${strengths}</ul></div>
+      </div>
+    </section>
 
-   <section class="result-trigger">
-     <span class="trigger-label">転職を考えるきっかけ</span>
-     <h3>いつ転職を考える？</h3>
-     <p>${results.trigger}</p>
-   </section>
+    <h3 class="result-subtitle">いつ転職を考える？</h3>
+    <div class="result-trigger"><strong>あなたの場合は、このサインが出てきたら。</strong><p>${results.trigger}</p></div>
 
-   <section class="case-section">
-     <h3>あなたと同じタイプは、こうやって転職を決めました</h3>
-     <p class="case-sub">※実在する個人の体験談ではなく、このタイプをイメージした架空のモデルケースです。</p>
-     <div class="case-card">
-       <div class="case-visual"><img src="${results.image}" alt="${results.name}のモデルケースイメージ"><div class="case-overlay"><span class="case-label">同タイプのモデルケース</span><strong>${results.caseTitle}</strong></div></div>
-       <div class="case-body"><p>${results.caseText}</p></div>
-     </div>
-   </section>
+    <h3 class="result-subtitle">あなたと同じタイプの転職ストーリー</h3>
+    <article class="model-case">
+      <img class="model-case-image" src="${results.modelImage}" alt="${results.name}の転職ストーリーのイメージ">
+      <div class="model-case-body">
+        <span class="model-case-kicker">3ヶ月モデル</span>
+        <h4>${results.modelTitle}</h4>
+        <p>${results.modelText}</p>
+      </div>
+    </article>
 
-   <section class="timeline-section">
-     <h3>理想の転職スタイル｜モデルケースの進み方</h3>
-     <div class="timeline">${timelineHtml}</div>
-   </section>
+    <h3 class="result-subtitle">理想の転職スタイル</h3>
+    <div class="timeline">${timeline}</div>
 
-   <section class="next-step-card">
-     <h3>⑤⑥ 今のあなたがやること</h3>
-     <div class="next-grid">
-       <div><b>⑤ 今整理すべきこと</b><p>${results.organize}</p></div>
-       <div><b>⑥ 次の一歩</b><p>${results.next}</p></div>
-     </div>
-   </section>
+    <div class="result-next-card">
+      <h4>⑤ 今整理すべきこと</h4><p>${results.organize}</p>
+      <h4 style="margin-top:14px">⑥ 次の一歩</h4><p>${results.next}</p>
+    </div>
 
-   <div class="result-actions"><a class="line-btn" href="${LINE_URL}" target="_blank" rel="noopener">⑦ 診断結果を基に無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
-   <p class="result-note">この診断は、今の仕事やキャリアについて整理するための簡易チェックです。転職や就職を一律に勧めるものではありません。</p>`;
+    <div class="result-actions"><a class="line-btn" href="${LINE_URL}" target="_blank" rel="noopener">⑦ この結果をもとに無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
+    <p class="result-note">この診断は、今の仕事やキャリアについて整理するための簡易チェックです。転職や就職を一律に勧めるものではありません。</p>`;
   resultPanel.classList.add('is-visible');
   document.getElementById('retryBtn').addEventListener('click',openQuiz);
 }
-
 </script>
 </body>
 </html>
