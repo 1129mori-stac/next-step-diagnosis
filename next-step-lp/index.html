@@ -420,6 +420,32 @@ html,body{overflow-x:hidden}
   .question-visual{width:100%!important;border-radius:14px!important}
 }
 
+
+/* v13: result images show their full original frame on PC/SP */
+.result-summary-card .result-character{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  overflow:visible!important;
+  background:#fff!important;
+}
+.result-summary-card .result-character img{
+  width:100%!important;
+  height:auto!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.model-case-image{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  display:block!important;
+  background:#fff;
+}
+
 </style>
 </head>
 <body>
