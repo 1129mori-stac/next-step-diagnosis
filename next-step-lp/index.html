@@ -526,6 +526,41 @@ html,body{overflow-x:hidden}
   .question-visual img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
   .quiz.is-result .quiz-head strong,.quiz.is-result .progress,.quiz.is-result .quiz-progress-note{display:none!important}
 }
+
+/* v18: desktop quiz image larger while keeping the whole question inside the viewport */
+@media (min-width:641px){
+  .quiz:not(.is-result){
+    height:min(760px,calc(100vh - 16px)) !important;
+    max-height:calc(100vh - 16px) !important;
+    overflow:hidden !important;
+  }
+  .quiz:not(.is-result) .quiz-top{padding:6px 22px 0 !important}
+  .quiz:not(.is-result) .quiz-body{padding:4px 22px 8px !important;overflow:visible !important}
+  .quiz-question-layout{gap:8px !important}
+  .question-title{font-size:clamp(20px,2.2vw,27px) !important;line-height:1.22 !important;margin:0 !important}
+  .question-visual{
+    width:min(100%,650px) !important;
+    height:clamp(220px,47vh,320px) !important;
+    max-height:320px !important;
+    min-height:220px !important;
+    aspect-ratio:4/3 !important;
+    margin:0 auto !important;
+    overflow:hidden !important;
+    border-radius:16px !important;
+  }
+  .question-visual img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    display:block !important;
+  }
+  .answers{gap:7px !important}
+  .answer{min-height:50px !important;padding:8px 8px !important}
+  .answer strong{font-size:14px !important}
+  .quiz-bottom{padding:0 22px 6px !important}
+}
+
 </style>
 </head>
 <body>
