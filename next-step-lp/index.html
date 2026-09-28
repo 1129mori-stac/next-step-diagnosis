@@ -676,6 +676,19 @@ html,body{overflow-x:hidden}
 
 <script>
 const LINE_URL='https://lin.ee/vPIlRje';
+// ===== LINE友だち追加経路（6タイプ別） =====
+// LINE公式アカウントで6本の「友だち追加経路」を作成したら、
+// それぞれ発行されたURLを下の空欄へ貼り付けてください。
+// 6タイプすべてのLINE流入経路URLを設定済みです。
+const LINE_ROUTE_URLS={
+  patience:'https://lin.ee/6hF2KwX',      // 我慢しすぎタイプ
+  lost:'https://lin.ee/XuVM9p9',          // 転職迷子タイプ
+  stop:'https://lin.ee/obIjR5H',          // 行動ストップタイプ
+  self:'https://lin.ee/plEaHuQ',          // 自分探しタイプ
+  environment:'https://lin.ee/O21rAJI',   // 環境見直しタイプ
+  cautious:'https://lin.ee/Z4igivV'       // 慎重判断タイプ
+};
+function getLineUrl(typeKey){return LINE_ROUTE_URLS[typeKey] || LINE_URL;}
 const questions=[
  {t:'今の仕事に「もう少しこうだったら…」と思うことがある。',opts:['はい','どちらでもない','いいえ']},
  {t:'転職したほうがいいと思っているのに、なかなか行動に移せない。',opts:['はい','どちらでもない','いいえ']},
@@ -956,7 +969,7 @@ function showResult(){
       <h4 style="margin-top:14px">② 次の一歩</h4><p>${results.next}</p>
     </div>
 
-    <div class="result-actions"><a class="line-btn" href="${LINE_URL}" target="_blank" rel="noopener">この結果をもとに無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
+    <div class="result-actions"><a class="line-btn" href="${getLineUrl(key)}" target="_blank" rel="noopener">この結果をもとに無料で相談する →</a><button class="retry-btn" id="retryBtn">もう一度診断する</button></div>
     <p class="result-note">この診断は、今の仕事やキャリアについて整理するための簡易チェックです。転職や就職を一律に勧めるものではありません。</p>`;
   resultPanel.classList.add('is-visible');
   document.getElementById('retryBtn').addEventListener('click',openQuiz);
