@@ -616,18 +616,16 @@ html,body{overflow-x:hidden}
 <section class="hero">
   <div class="hero-media">
     <picture>
-      <source media="(max-width: 640px)" srcset="assets/hero-sp-v23.jpg">
-      <img src="assets/hero-pc-v23.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
+      <source media="(max-width: 640px)" srcset="assets/hero-sp-clean.jpg">
+      <img src="assets/hero-pc-clean.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
     </picture>
   </div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="hero-kicker">次の一歩、きっと見つかる。</div>
+      <div class="hero-kicker">次の一歩を、一緒に見つける。</div>
       <h1 class="hero-title-text"><span class="marker">転職迷子診断</span></h1>
       <p class="hero-lead-text">転職したほうがいい？<br>それとも、まだ動かなくていい？</p>
-      <img class="hero-title-image" src="assets/hero-title.png" alt="転職迷子診断">
-      <img class="hero-subtitle-image" src="assets/hero-subtitle.png" alt="転職したほうがいい？それとも、まだ動かなくていい？">
       <div class="hero-meta"><span>⏱ 10問・約2分</span><span>✓ 無料・登録不要</span><span>6タイプから整理</span></div>
       <button class="cta" data-open-quiz>今の自分を診断する <span class="cta-arrow">→</span></button>
     </div>
@@ -1049,5 +1047,78 @@ function showResult(){
   .hero-copy .cta{width:100%!important;min-width:0!important;margin:0!important;}
 }
 </style>
+<style>
+/* v25 final hero: use clean background images, no white wash, no duplicate text */
+.hero{position:relative;overflow:hidden;background:#dff3ff!important;min-height:0!important;height:auto!important;}
+.hero::after{display:none!important;}
+.hero-media{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important;background:transparent!important;}
+.hero-media img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;object-position:center center!important;filter:none!important;opacity:1!important;}
+.hero-shade{display:none!important;}
+.hero-inner{position:relative!important;z-index:2!important;width:min(1240px,92vw)!important;margin:0 auto!important;min-height:clamp(560px,46.9vw,760px)!important;height:clamp(560px,46.9vw,760px)!important;display:flex!important;align-items:center!important;padding:40px 0 54px!important;box-sizing:border-box!important;}
+.hero-copy{width:min(700px,60%)!important;padding:0!important;}
+.hero-kicker{display:block!important;font-family:"Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif!important;font-style:normal!important;font-weight:700!important;font-size:clamp(18px,2vw,28px)!important;letter-spacing:.04em!important;color:#143b56!important;margin:0 0 22px!important;text-shadow:0 1px 0 rgba(255,255,255,.45)!important;}
+.hero h1.hero-title-text{display:block!important;font-family:"Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif!important;font-style:normal!important;font-weight:900!important;font-size:clamp(68px,7.4vw,112px)!important;line-height:1.02!important;letter-spacing:-.055em!important;margin:0 0 42px!important;color:#123d5a!important;white-space:nowrap!important;text-shadow:0 2px 0 rgba(255,255,255,.2)!important;}
+.hero h1.hero-title-text .marker{padding:0 .02em!important;background:linear-gradient(transparent 72%,#ffeb57 0)!important;}
+.hero .hero-lead-text{display:block!important;font-family:"Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif!important;font-style:normal!important;font-weight:800!important;font-size:clamp(22px,2.3vw,31px)!important;line-height:1.7!important;letter-spacing:.015em!important;margin:0 0 24px!important;color:#183f56!important;}
+.hero .hero-title-image,.hero .hero-subtitle-image{display:none!important;}
+.hero-meta{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:0 0 18px!important;}
+.hero-meta span{font-size:12px!important;padding:7px 11px!important;background:rgba(255,255,255,.94)!important;border:1px solid rgba(37,124,163,.16)!important;border-radius:999px!important;box-shadow:0 8px 18px rgba(20,66,89,.08)!important;}
+.hero-copy .cta{min-width:320px!important;background:#ff6565!important;color:#fff!important;border:3px solid #fff!important;box-shadow:0 14px 30px rgba(255,105,105,.26)!important;font-size:clamp(18px,2vw,22px)!important;padding:17px 28px!important;}
+@media (max-width:900px) and (min-width:641px){.hero-inner{width:94vw!important;min-height:560px!important;height:560px!important;padding-top:34px!important;}.hero-copy{width:68%!important;}.hero h1.hero-title-text{font-size:clamp(58px,8vw,86px)!important;margin-bottom:32px!important;}.hero .hero-lead-text{font-size:22px!important;}}
+@media (max-width:640px){
+  .hero{height:auto!important;min-height:0!important;}
+  .hero-media{position:absolute!important;height:100%!important;}
+  .hero-media img{object-position:center center!important;}
+  .hero-inner{width:100%!important;min-height:760px!important;height:760px!important;align-items:flex-start!important;padding:52px 6% 22px!important;box-sizing:border-box!important;}
+  .hero-copy{width:100%!important;max-width:none!important;padding:0!important;}
+  .hero-kicker{font-family:"Noto Serif CJK JP","Yu Mincho",serif!important;font-size:15px!important;margin:0 0 18px!important;letter-spacing:.03em!important;}
+  .hero h1.hero-title-text{font-family:"Noto Serif CJK JP","Yu Mincho",serif!important;font-style:normal!important;font-size:clamp(44px,12vw,62px)!important;line-height:1!important;letter-spacing:-.045em!important;margin:0 0 34px!important;white-space:nowrap!important;}
+  .hero .hero-lead-text{font-family:"Noto Serif CJK JP","Yu Mincho",serif!important;font-size:17px!important;line-height:1.8!important;margin:0 0 22px!important;}
+  .hero-meta{justify-content:flex-start!important;gap:6px!important;margin-bottom:18px!important;}
+  .hero-meta span{font-size:10px!important;padding:6px 8px!important;}
+  .hero-copy .cta{width:100%!important;min-width:0!important;font-size:17px!important;padding:15px 20px!important;margin:0!important;}
+}
+</style>
+
+<style id="v26-hero-fix">
+/* v26: Use clean hero assets and make all copy live HTML (prevents duplicate text). */
+.hero{background:#dff3ff!important;overflow:hidden!important;}
+.hero::after,.hero-shade{display:none!important;content:none!important;background:none!important;opacity:0!important;}
+.hero-media,.hero-media picture,.hero-media img{opacity:1!important;filter:none!important;mix-blend-mode:normal!important;}
+.hero-media img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;}
+
+.hero-inner{width:min(1240px,92vw)!important;margin:0 auto!important;min-height:clamp(560px,46.9vw,760px)!important;height:clamp(560px,46.9vw,760px)!important;display:block!important;position:relative!important;padding:0!important;}
+.hero-copy{position:relative!important;width:min(700px,60%)!important;height:100%!important;padding:0!important;}
+.hero-kicker{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important;font-weight:700!important;font-size:clamp(18px,2vw,28px)!important;letter-spacing:.04em!important;margin:0!important;position:absolute!important;left:0!important;top:9%!important;color:#143b56!important;text-shadow:0 1px 0 rgba(255,255,255,.42)!important;}
+.hero h1.hero-title-text{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important;font-style:normal!important;font-weight:900!important;font-size:clamp(72px,7.6vw,116px)!important;line-height:1.02!important;letter-spacing:-.055em!important;margin:0!important;position:absolute!important;left:0!important;top:17%!important;color:#123d5a!important;white-space:nowrap!important;text-shadow:0 2px 0 rgba(255,255,255,.18)!important;}
+.hero h1.hero-title-text .marker{padding:0 .02em!important;background:linear-gradient(transparent 72%,#ffeb57 0)!important;}
+.hero .hero-lead-text{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif!important;font-style:normal!important;font-weight:800!important;font-size:clamp(22px,2.3vw,31px)!important;line-height:1.72!important;letter-spacing:.015em!important;margin:0!important;position:absolute!important;left:0!important;top:38%!important;color:#183f56!important;}
+.hero-meta{display:flex!important;gap:8px!important;flex-wrap:wrap!important;position:absolute!important;left:0!important;bottom:86px!important;margin:0!important;}
+.hero-meta span{font-size:12px!important;padding:7px 11px!important;background:rgba(255,255,255,.95)!important;border:1px solid rgba(37,124,163,.16)!important;border-radius:999px!important;box-shadow:0 8px 18px rgba(20,66,89,.08)!important;}
+.hero-copy .cta{position:absolute!important;left:0!important;bottom:22px!important;margin:0!important;min-width:320px!important;background:#ff6565!important;color:#fff!important;border:3px solid #fff!important;box-shadow:0 14px 30px rgba(255,105,105,.26)!important;font-size:clamp(18px,2vw,22px)!important;padding:17px 28px!important;}
+
+@media (max-width:900px) and (min-width:641px){
+  .hero-inner{width:94vw!important;min-height:560px!important;height:560px!important;}
+  .hero-copy{width:68%!important;}
+  .hero h1.hero-title-text{font-size:clamp(58px,8vw,86px)!important;top:20%!important;}
+  .hero .hero-lead-text{font-size:22px!important;top:39%!important;}
+}
+
+@media (max-width:640px){
+  .hero{height:auto!important;min-height:760px!important;}
+  .hero-media{position:absolute!important;inset:0!important;height:100%!important;}
+  .hero-media img{object-fit:cover!important;object-position:center center!important;}
+  .hero-inner{width:100%!important;min-height:760px!important;height:760px!important;display:block!important;padding:0!important;}
+  .hero-copy{width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:0 7%!important;}
+  .hero-kicker{font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-size:15px!important;letter-spacing:.03em!important;top:6%!important;left:7%!important;}
+  .hero h1.hero-title-text{font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-style:normal!important;font-weight:900!important;font-size:clamp(42px,11.5vw,52px)!important;line-height:1!important;letter-spacing:-.035em!important;top:12%!important;left:50%!important;transform:translateX(-50%)!important;white-space:nowrap!important;width:max-content!important;max-width:92vw!important;text-align:center!important;}
+  .hero h1.hero-title-text .marker{padding:0 .02em!important;background:linear-gradient(transparent 71%,#ffeb57 0)!important;}
+  .hero .hero-lead-text{font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-size:17px!important;line-height:1.8!important;top:25%!important;left:7%!important;}
+  .hero-meta{left:7%!important;right:7%!important;bottom:92px!important;justify-content:flex-start!important;gap:6px!important;}
+  .hero-meta span{font-size:10px!important;padding:6px 8px!important;}
+  .hero-copy .cta{left:7%!important;right:7%!important;bottom:18px!important;width:auto!important;min-width:0!important;font-size:17px!important;padding:15px 20px!important;}
+}
+</style>
+
 </body>
 </html>
