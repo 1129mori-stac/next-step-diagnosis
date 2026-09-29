@@ -616,7 +616,7 @@ html,body{overflow-x:hidden}
 <section class="hero">
   <div class="hero-media">
     <picture>
-      <source media="(max-width: 640px)" srcset="assets/hero-sp-clean.jpg">
+      <source media="(max-width: 640px)" srcset="assets/hero-sp-mobile.jpg">
       <img src="assets/hero-pc-clean.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
     </picture>
   </div>
@@ -1117,6 +1117,22 @@ function showResult(){
   .hero-meta{left:7%!important;right:7%!important;bottom:92px!important;justify-content:flex-start!important;gap:6px!important;}
   .hero-meta span{font-size:10px!important;padding:6px 8px!important;}
   .hero-copy .cta{left:7%!important;right:7%!important;bottom:18px!important;width:auto!important;min-width:0!important;font-size:17px!important;padding:15px 20px!important;}
+}
+/* v27: SP ONLY — restore the previous handwritten look and vivid mobile hero. PC untouched. */
+@media (max-width:640px){
+  .hero{background:transparent!important;min-height:760px!important;height:760px!important;}
+  .hero-media,.hero-media picture,.hero-media img{opacity:1!important;filter:none!important;mix-blend-mode:normal!important;}
+  .hero-media{position:absolute!important;inset:0!important;height:100%!important;background:transparent!important;}
+  .hero-media img{object-fit:cover!important;object-position:center center!important;}
+  .hero-inner{width:100%!important;min-height:760px!important;height:760px!important;padding:0 6%!important;box-sizing:border-box!important;}
+  .hero-copy{width:100%!important;height:100%!important;margin:0!important;padding:0!important;position:relative!important;}
+  .hero-kicker{display:block!important;font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-size:15px!important;font-weight:700!important;letter-spacing:.03em!important;line-height:1.5!important;top:6%!important;left:0!important;margin:0!important;color:#143b56!important;text-shadow:0 1px 0 rgba(255,255,255,.45)!important;}
+  .hero h1.hero-title-text{display:block!important;font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-style:normal!important;font-weight:900!important;font-size:clamp(42px,11.5vw,52px)!important;line-height:1!important;letter-spacing:-.035em!important;top:12%!important;left:50%!important;transform:translateX(-50%)!important;white-space:nowrap!important;width:max-content!important;max-width:92vw!important;text-align:center!important;margin:0!important;color:#123d5a!important;text-shadow:0 2px 0 rgba(255,255,255,.18)!important;}
+  .hero h1.hero-title-text .marker{padding:0 .02em!important;background:linear-gradient(transparent 71%,#ffeb57 0)!important;}
+  .hero .hero-lead-text{display:block!important;font-family:"Klee One","Hannotate SC","YuKyokasho","Hiragino Maru Gothic ProN",cursive!important;font-size:17px!important;font-weight:800!important;line-height:1.8!important;letter-spacing:.01em!important;top:25%!important;left:0!important;margin:0!important;color:#183f56!important;}
+  .hero-meta{left:0!important;right:0!important;bottom:92px!important;justify-content:center!important;gap:6px!important;margin:0!important;}
+  .hero-meta span{font-size:10px!important;padding:6px 8px!important;}
+  .hero-copy .cta{left:0!important;right:0!important;bottom:18px!important;width:100%!important;min-width:0!important;font-size:17px!important;padding:15px 20px!important;margin:0!important;}
 }
 </style>
 
