@@ -561,6 +561,54 @@ html,body{overflow-x:hidden}
   .quiz-bottom{padding:0 22px 6px !important}
 }
 
+
+/* v21 hero polish: vivid imagery, no washout overlay, cleaner spacing, lower CTA */
+.hero::after,.hero-shade{display:none!important}
+.hero-media img{filter:none!important;object-fit:cover!important;object-position:center!important}
+.hero-kicker,.hero-title-image,.hero-subtitle-image{display:none!important}
+.hero-inner{align-items:flex-end!important;min-height:clamp(500px,56.25vw,756px)!important;padding:0 0 54px!important}
+.hero-copy{width:min(640px,92vw)!important}
+.hero-meta{margin:0 0 14px!important}
+.hero-copy .cta{margin:0!important;transform:none!important}
+@media (max-width:640px){
+  .hero-inner{min-height:100%!important;padding:0 0 24px!important;align-items:flex-end!important}
+  .hero-copy{width:min(100% - 28px,420px)!important;margin:0 auto!important}
+  .hero-meta{justify-content:center!important;flex-wrap:wrap!important;margin-bottom:12px!important}
+  .hero-copy .cta{width:100%!important;min-width:0!important}
+}
+
+/* v22 FV clarity fix: no white wash / sharper hero */
+.hero-shade{display:none!important;background:none!important;opacity:0!important}
+.hero-media img{filter:saturate(1.04) contrast(1.03) brightness(1.01)!important}
+.hero-media picture,.hero-media img{opacity:1!important}
+@media (max-width:640px){
+  .hero-media img{filter:saturate(1.04) contrast(1.03) brightness(1.01)!important}
+}
+
+/* v23 FINAL HERO: remove every wash layer and force fresh image assets */
+.hero::after,
+.hero-shade {
+  display:none !important;
+  background:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+}
+.hero-media,
+.hero-media picture,
+.hero-media img {
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+}
+.hero-media img {
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+@media (max-width:640px){
+  .hero-media img {
+    object-position:center top !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -568,8 +616,8 @@ html,body{overflow-x:hidden}
 <section class="hero">
   <div class="hero-media">
     <picture>
-      <source media="(max-width: 640px)" srcset="assets/hero-sp.jpg">
-      <img src="assets/hero-pc.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
+      <source media="(max-width: 640px)" srcset="assets/hero-sp-v23.jpg">
+      <img src="assets/hero-pc-v23.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
     </picture>
   </div>
   <div class="hero-shade" aria-hidden="true"></div>
