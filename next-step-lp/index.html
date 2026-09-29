@@ -624,6 +624,8 @@ html,body{overflow-x:hidden}
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-kicker">次の一歩、きっと見つかる。</div>
+      <h1 class="hero-title-text"><span class="marker">転職迷子診断</span></h1>
+      <p class="hero-lead-text">転職したほうがいい？<br>それとも、まだ動かなくていい？</p>
       <img class="hero-title-image" src="assets/hero-title.png" alt="転職迷子診断">
       <img class="hero-subtitle-image" src="assets/hero-subtitle.png" alt="転職したほうがいい？それとも、まだ動かなくていい？">
       <div class="hero-meta"><span>⏱ 10問・約2分</span><span>✓ 無料・登録不要</span><span>6タイプから整理</span></div>
@@ -1023,5 +1025,29 @@ function showResult(){
   document.getElementById('retryBtn').addEventListener('click',openQuiz);
 }
 </script>
+
+<style>
+/* v24: FV polish — desktop Mincho headline, SP keeps handwritten artwork */
+.hero-title-text,.hero-lead-text{display:none;}
+@media (min-width: 641px){
+  .hero-copy{padding-left:7.5%!important;width:min(720px,62%)!important;}
+  .hero-kicker{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","HGS明朝E",serif!important;font-style:normal!important;font-weight:700!important;font-size:clamp(20px,2.05vw,29px)!important;letter-spacing:.06em!important;margin:0 0 18px!important;color:#133f5b!important;}
+  .hero-title-text{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","HGS明朝E",serif!important;font-style:normal!important;font-weight:900!important;font-size:clamp(68px,8vw,112px)!important;line-height:1.04!important;letter-spacing:-.045em!important;margin:0 0 38px!important;color:#0f3f5d!important;text-shadow:0 2px 0 rgba(255,255,255,.18)!important;}
+  .hero-title-text .marker{padding:0 .03em!important;background:linear-gradient(transparent 73%,#ffea63 0)!important;}
+  .hero-lead-text{display:block!important;font-family:"Hiragino Mincho ProN","Yu Mincho","HGS明朝E",serif!important;font-style:normal!important;font-weight:800!important;font-size:clamp(22px,2.35vw,32px)!important;line-height:1.65!important;letter-spacing:.01em!important;margin:0 0 24px!important;color:#173f55!important;}
+  .hero-title-image,.hero-subtitle-image{display:none!important;}
+  .hero-meta{margin:0 0 20px!important;}
+  .hero-copy .cta{margin:0!important;}
+}
+@media (max-width: 640px){
+  .hero-title-text,.hero-lead-text{display:none!important;}
+  .hero-kicker{display:none!important;}
+  .hero-copy{width:100%!important;padding:0 6%!important;}
+  .hero-title-image{display:block!important;width:88%!important;max-width:88%!important;height:auto!important;margin:0 auto 22px!important;transform:none!important;}
+  .hero-subtitle-image{display:block!important;width:88%!important;max-width:88%!important;height:auto!important;margin:0 auto 26px!important;}
+  .hero-meta{justify-content:center!important;gap:6px!important;margin-bottom:18px!important;}
+  .hero-copy .cta{width:100%!important;min-width:0!important;margin:0!important;}
+}
+</style>
 </body>
 </html>
