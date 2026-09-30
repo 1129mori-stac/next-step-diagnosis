@@ -633,13 +633,29 @@ html,body{overflow-x:hidden}
 }
 </style>
 
+
+<style id="mobile-old-hero-only">
+@media (max-width:640px){
+  /* hero-sp-old.jpg already contains all four requested handwritten copy lines.
+     Hide the HTML copy only on mobile to avoid duplication. */
+  .hero-kicker,
+  .hero-title-text,
+  .hero-title-image,
+  .hero-lead,
+  .hero-lead-text,
+  .sp-handwritten-text{
+    display:none !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <main>
 <section class="hero">
   <div class="hero-media">
     <picture>
-      <source media="(max-width: 640px)" srcset="assets/hero-sp-v25.jpg">
+      <source media="(max-width: 640px)" srcset="assets/hero-sp-old.jpg?v=34">
       <img src="assets/hero-pc-clean.jpg" alt="街を見つめながら次の一歩を考える若者のイメージ">
     </picture>
   </div>
