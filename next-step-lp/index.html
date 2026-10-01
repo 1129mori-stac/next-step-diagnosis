@@ -1350,5 +1350,19 @@ function showResult(){
 }
 </style>
 
+<style id="v37-reward-desktop-explicit">
+/* v37: show the same reward section on desktop and mobile. */
+.rewards{display:block!important;width:100%;}
+@media (min-width:821px){
+  .rewards .container{display:block;}
+  .rewards .reward-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;margin-top:22px!important;}
+  .rewards .reward-card{display:block!important;min-width:0!important;}
+}
+@media (max-width:820px){
+  .rewards .reward-grid{display:grid!important;grid-template-columns:1fr!important;}
+}
+</style>
+
+
 </body>
 </html>
