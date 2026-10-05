@@ -1363,6 +1363,25 @@ function showResult(){
 }
 </style>
 
+<style id="mobile-hero-full-width-final">
+/* Keep the complete 2:3 mobile hero visible edge-to-edge after earlier hero overrides. */
+@media (max-width:640px){
+  .hero-media picture{position:static!important;}
+  .hero-media img{
+    position:absolute!important;
+    top:0!important;
+    left:50%!important;
+    width:100vw!important;
+    max-width:none!important;
+    height:auto!important;
+    aspect-ratio:auto!important;
+    object-fit:fill!important;
+    object-position:center top!important;
+    transform:translateX(-50%)!important;
+  }
+}
+</style>
+
 
 </body>
 </html>
